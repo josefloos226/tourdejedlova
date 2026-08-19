@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>TDJ — Tour de Jedlová | V20.4</title>
+
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<nav class="nav" id="nav"><a aria-label="Tour de Jedlová" class="brand" href="#top"><img alt="TDJ" class="brand-logo" src="assets/images/embedded/image-001.svg"/></a><div class="menu">
+<a href="#zavod">ZÁVOD</a>
+<a href="#historie">HISTORIE</a>
+<a href="#trasa">TRASA</a>
+<a href="#galerie">FOTOGALERIE</a>
+<a href="#vysledky">VÝSLEDKY</a>
+<a href="#pomahame">POMÁHÁME</a>
+</div><div class="mobile">☰</div></nav>
+<header class="hero" id="top"><div class="hero-bg" id="heroBg"></div><div class="veil"></div><div class="hero-copy"><div class="kicker">VARNSDORF • LUŽICKÉ HORY</div><h1>TDJ</h1><div class="name">TOUR DE JEDLOVÁ</div><div class="date" id="raceDate">SRPEN 2027</div><div class="edition" id="raceEdition">29. ROČNÍK MTB ZÁVODU</div><div class="registration-wrap"><a class="cta" id="registrationButton" href="#info">REGISTRACE ZAVŘENA</a></div></div><a class="scroll" href="#zavod">OBJEV TOUR DE JEDLOVÁ<div class="arrow">⌄</div></a></header>
+<section class="statement" id="zavod"><div class="eyebrow">TOUR DE JEDLOVÁ</div><h2>10 KM. <span class="nowrap">400 VÝŠKOVÝCH METRŮ.</span> JEDEN VRCHOL.</h2><p>Z Varnsdorfu až na Jedlovou. Tradiční MTB závod, kde nejde jen o čas — ale o cestu nahoru, atmosféru a společný zážitek.</p><div class="stats icon-stats">
+<div class="stat"><svg aria-hidden="true" class="stat-icon" viewbox="0 0 64 64"><path d="M32 57S13 40 13 24a19 19 0 1 1 38 0c0 16-19 33-19 33Z"></path><circle cx="32" cy="24" r="7"></circle></svg><div><b>10 KM</b><span>DÉLKA TRASY</span></div></div>
+<div class="stat"><svg aria-hidden="true" class="stat-icon" viewbox="0 0 72 64"><path d="M5 55 25 22l9 14 8-10 25 29Z"></path><path d="m18 43 7-11 7 11"></path></svg><div><b>400 M+</b><span>PŘEVÝŠENÍ</span></div></div>
+<div class="stat"><svg aria-hidden="true" class="stat-icon" viewbox="0 0 64 64"><path d="M20 55h24M24 55l4-36h8l4 36M26 29h12M25 39h14M22 19h20l-4-7H26l-4 7ZM29 12V7h6v5"></path><path d="m28 29 10 10M37 29 27 39"></path></svg><div><b>JEDLOVÁ</b><span>CÍL ZÁVODU</span></div></div><div class="stat"><svg aria-hidden="true" class="stat-icon" viewbox="0 0 64 64"><circle cx="32" cy="32" r="24"></circle><path d="M32 17v16l11 7"></path></svg><div><b>10:00</b><span>START</span></div></div>
+</div><div class="tdj-prop-wrap"><a class="tdj-prop-btn" href="#propozice" id="openPropozice">PROPOZICE <span>→</span></a></div></section>
+<section class="photo-break history-merged" id="historie"><div class="history-merged-copy"><div class="v11-kicker">HISTORIE &amp; TRADICE</div><h2>28 LET NA CESTĚ<br/>K JEDLOVÉ.</h2><p>Tour de Jedlová vyrostla z místní cyklistiky a zůstala závodem, kde se potkává sport, Lužické hory a lidé, kteří se sem každý rok vracejí.</p><a class="text-link" href="#">PŘÍBĚH TDJ <span>→</span></a></div></section>
+<section class="info" id="info"><div class="info-grid info-grid-v4"><div class="info-copy"><div class="eyebrow">SRPEN 2027</div><h2>NA STARTU V 10:00.</h2><p>Varnsdorf, Lidová zahrada. Cíl závodu je u rozhledny Jedlová.</p><div class="info-stats"><span><b>10 KM</b>DÉLKA TRASY</span><span><b>400 M+</b>PŘEVÝŠENÍ</span><span><b>JEDLOVÁ</b>CÍL ZÁVODU</span></div></div><div class="register-panel"><div class="register-qr"><svg aria-label="Simulovaný QR kód" shape-rendering="crispEdges" viewbox="0 0 29 29"><rect fill="white" height="29" width="29"></rect><g fill="#075fae"><rect height="7" width="7" x="0" y="0"></rect><rect fill="white" height="5" width="5" x="1" y="1"></rect><rect height="3" width="3" x="2" y="2"></rect><rect height="7" width="7" x="22" y="0"></rect><rect fill="white" height="5" width="5" x="23" y="1"></rect><rect height="3" width="3" x="24" y="2"></rect><rect height="7" width="7" x="0" y="22"></rect><rect fill="white" height="5" width="5" x="1" y="23"></rect><rect height="3" width="3" x="2" y="24"></rect><rect height="1" width="1" x="7" y="0"></rect><rect height="1" width="1" x="9" y="0"></rect><rect height="1" width="1" x="11" y="0"></rect><rect height="1" width="1" x="13" y="0"></rect><rect height="1" width="1" x="16" y="0"></rect><rect height="1" width="1" x="18" y="0"></rect><rect height="1" width="1" x="20" y="0"></rect><rect height="1" width="1" x="8" y="1"></rect><rect height="1" width="1" x="9" y="1"></rect><rect height="1" width="1" x="13" y="1"></rect><rect height="1" width="1" x="14" y="1"></rect><rect height="1" width="1" x="17" y="1"></rect><rect height="1" width="1" x="18" y="1"></rect><rect height="1" width="1" x="21" y="1"></rect><rect height="1" width="1" x="7" y="2"></rect><rect height="1" width="1" x="8" y="2"></rect><rect height="1" width="1" x="9" y="2"></rect><rect height="1" width="1" x="10" y="2"></rect><rect height="1" width="1" x="11" y="2"></rect><rect height="1" width="1" x="12" y="2"></rect><rect height="1" width="1" x="13" y="2"></rect><rect height="1" width="1" x="14" y="2"></rect><rect height="1" width="1" x="15" y="2"></rect><rect height="1" width="1" x="16" y="2"></rect><rect height="1" width="1" x="17" y="2"></rect><rect height="1" width="1" x="18" y="2"></rect><rect height="1" width="1" x="19" y="2"></rect><rect height="1" width="1" x="20" y="2"></rect><rect height="1" width="1" x="21" y="2"></rect><rect height="1" width="1" x="9" y="3"></rect><rect height="1" width="1" x="10" y="3"></rect><rect height="1" width="1" x="14" y="3"></rect><rect height="1" width="1" x="15" y="3"></rect><rect height="1" width="1" x="18" y="3"></rect><rect height="1" width="1" x="19" y="3"></rect><rect height="1" width="1" x="7" y="4"></rect><rect height="1" width="1" x="10" y="4"></rect><rect height="1" width="1" x="12" y="4"></rect><rect height="1" width="1" x="14" y="4"></rect><rect height="1" width="1" x="16" y="4"></rect><rect height="1" width="1" x="18" y="4"></rect><rect height="1" width="1" x="20" y="4"></rect><rect height="1" width="1" x="8" y="5"></rect><rect height="1" width="1" x="11" y="5"></rect><rect height="1" width="1" x="14" y="5"></rect><rect height="1" width="1" x="15" y="5"></rect><rect height="1" width="1" x="17" y="5"></rect><rect height="1" width="1" x="18" y="5"></rect><rect height="1" width="1" x="21" y="5"></rect><rect height="1" width="1" x="14" y="6"></rect><rect height="1" width="1" x="15" y="6"></rect><rect height="1" width="1" x="16" y="6"></rect><rect height="1" width="1" x="17" y="6"></rect><rect height="1" width="1" x="18" y="6"></rect><rect height="1" width="1" x="19" y="6"></rect><rect height="1" width="1" x="0" y="7"></rect><rect height="1" width="1" x="5" y="7"></rect><rect height="1" width="1" x="6" y="7"></rect><rect height="1" width="1" x="7" y="7"></rect><rect height="1" width="1" x="11" y="7"></rect><rect height="1" width="1" x="12" y="7"></rect><rect height="1" width="1" x="13" y="7"></rect><rect height="1" width="1" x="18" y="7"></rect><rect height="1" width="1" x="19" y="7"></rect><rect height="1" width="1" x="20" y="7"></rect><rect height="1" width="1" x="24" y="7"></rect><rect height="1" width="1" x="25" y="7"></rect><rect height="1" width="1" x="26" y="7"></rect><rect height="1" width="1" x="0" y="8"></rect><rect height="1" width="1" x="3" y="8"></rect><rect height="1" width="1" x="5" y="8"></rect><rect height="1" width="1" x="8" y="8"></rect><rect height="1" width="1" x="10" y="8"></rect><rect height="1" width="1" x="11" y="8"></rect><rect height="1" width="1" x="13" y="8"></rect><rect height="1" width="1" x="16" y="8"></rect><rect height="1" width="1" x="18" y="8"></rect><rect height="1" width="1" x="21" y="8"></rect><rect height="1" width="1" x="23" y="8"></rect><rect height="1" width="1" x="24" y="8"></rect><rect height="1" width="1" x="26" y="8"></rect><rect height="1" width="1" x="0" y="9"></rect><rect height="1" width="1" x="2" y="9"></rect><rect height="1" width="1" x="5" y="9"></rect><rect height="1" width="1" x="7" y="9"></rect><rect height="1" width="1" x="10" y="9"></rect><rect height="1" width="1" x="12" y="9"></rect><rect height="1" width="1" x="13" y="9"></rect><rect height="1" width="1" x="15" y="9"></rect><rect height="1" width="1" x="18" y="9"></rect><rect height="1" width="1" x="20" y="9"></rect><rect height="1" width="1" x="23" y="9"></rect><rect height="1" width="1" x="25" y="9"></rect><rect height="1" width="1" x="26" y="9"></rect><rect height="1" width="1" x="28" y="9"></rect><rect height="1" width="1" x="3" y="10"></rect><rect height="1" width="1" x="4" y="10"></rect><rect height="1" width="1" x="5" y="10"></rect><rect height="1" width="1" x="10" y="10"></rect><rect height="1" width="1" x="11" y="10"></rect><rect height="1" width="1" x="12" y="10"></rect><rect height="1" width="1" x="16" y="10"></rect><rect height="1" width="1" x="17" y="10"></rect><rect height="1" width="1" x="18" y="10"></rect><rect height="1" width="1" x="23" y="10"></rect><rect height="1" width="1" x="24" y="10"></rect><rect height="1" width="1" x="25" y="10"></rect><rect height="1" width="1" x="4" y="11"></rect><rect height="1" width="1" x="5" y="11"></rect><rect height="1" width="1" x="6" y="11"></rect><rect height="1" width="1" x="7" y="11"></rect><rect height="1" width="1" x="8" y="11"></rect><rect height="1" width="1" x="9" y="11"></rect><rect height="1" width="1" x="17" y="11"></rect><rect height="1" width="1" x="18" y="11"></rect><rect height="1" width="1" x="19" y="11"></rect><rect height="1" width="1" x="20" y="11"></rect><rect height="1" width="1" x="21" y="11"></rect><rect height="1" width="1" x="22" y="11"></rect><rect height="1" width="1" x="2" y="12"></rect><rect height="1" width="1" x="5" y="12"></rect><rect height="1" width="1" x="6" y="12"></rect><rect height="1" width="1" x="8" y="12"></rect><rect height="1" width="1" x="9" y="12"></rect><rect height="1" width="1" x="12" y="12"></rect><rect height="1" width="1" x="15" y="12"></rect><rect height="1" width="1" x="18" y="12"></rect><rect height="1" width="1" x="19" y="12"></rect><rect height="1" width="1" x="21" y="12"></rect><rect height="1" width="1" x="22" y="12"></rect><rect height="1" width="1" x="25" y="12"></rect><rect height="1" width="1" x="28" y="12"></rect><rect height="1" width="1" x="0" y="13"></rect><rect height="1" width="1" x="3" y="13"></rect><rect height="1" width="1" x="5" y="13"></rect><rect height="1" width="1" x="7" y="13"></rect><rect height="1" width="1" x="9" y="13"></rect><rect height="1" width="1" x="11" y="13"></rect><rect height="1" width="1" x="13" y="13"></rect><rect height="1" width="1" x="16" y="13"></rect><rect height="1" width="1" x="18" y="13"></rect><rect height="1" width="1" x="20" y="13"></rect><rect height="1" width="1" x="22" y="13"></rect><rect height="1" width="1" x="24" y="13"></rect><rect height="1" width="1" x="26" y="13"></rect><rect height="1" width="1" x="0" y="14"></rect><rect height="1" width="1" x="1" y="14"></rect><rect height="1" width="1" x="4" y="14"></rect><rect height="1" width="1" x="5" y="14"></rect><rect height="1" width="1" x="8" y="14"></rect><rect height="1" width="1" x="9" y="14"></rect><rect height="1" width="1" x="13" y="14"></rect><rect height="1" width="1" x="14" y="14"></rect><rect height="1" width="1" x="17" y="14"></rect><rect height="1" width="1" x="18" y="14"></rect><rect height="1" width="1" x="21" y="14"></rect><rect height="1" width="1" x="22" y="14"></rect><rect height="1" width="1" x="26" y="14"></rect><rect height="1" width="1" x="27" y="14"></rect><rect height="1" width="1" x="0" y="15"></rect><rect height="1" width="1" x="1" y="15"></rect><rect height="1" width="1" x="2" y="15"></rect><rect height="1" width="1" x="3" y="15"></rect><rect height="1" width="1" x="4" y="15"></rect><rect height="1" width="1" x="5" y="15"></rect><rect height="1" width="1" x="6" y="15"></rect><rect height="1" width="1" x="7" y="15"></rect><rect height="1" width="1" x="8" y="15"></rect><rect height="1" width="1" x="9" y="15"></rect><rect height="1" width="1" x="10" y="15"></rect><rect height="1" width="1" x="11" y="15"></rect><rect height="1" width="1" x="12" y="15"></rect><rect height="1" width="1" x="13" y="15"></rect><rect height="1" width="1" x="14" y="15"></rect><rect height="1" width="1" x="15" y="15"></rect><rect height="1" width="1" x="16" y="15"></rect><rect height="1" width="1" x="17" y="15"></rect><rect height="1" width="1" x="18" y="15"></rect><rect height="1" width="1" x="19" y="15"></rect><rect height="1" width="1" x="20" y="15"></rect><rect height="1" width="1" x="21" y="15"></rect><rect height="1" width="1" x="22" y="15"></rect><rect height="1" width="1" x="23" y="15"></rect><rect height="1" width="1" x="24" y="15"></rect><rect height="1" width="1" x="25" y="15"></rect><rect height="1" width="1" x="26" y="15"></rect><rect height="1" width="1" x="27" y="15"></rect><rect height="1" width="1" x="28" y="15"></rect><rect height="1" width="1" x="1" y="16"></rect><rect height="1" width="1" x="2" y="16"></rect><rect height="1" width="1" x="5" y="16"></rect><rect height="1" width="1" x="6" y="16"></rect><rect height="1" width="1" x="9" y="16"></rect><rect height="1" width="1" x="10" y="16"></rect><rect height="1" width="1" x="14" y="16"></rect><rect height="1" width="1" x="15" y="16"></rect><rect height="1" width="1" x="18" y="16"></rect><rect height="1" width="1" x="19" y="16"></rect><rect height="1" width="1" x="22" y="16"></rect><rect height="1" width="1" x="23" y="16"></rect><rect height="1" width="1" x="27" y="16"></rect><rect height="1" width="1" x="28" y="16"></rect><rect height="1" width="1" x="1" y="17"></rect><rect height="1" width="1" x="3" y="17"></rect><rect height="1" width="1" x="5" y="17"></rect><rect height="1" width="1" x="7" y="17"></rect><rect height="1" width="1" x="10" y="17"></rect><rect height="1" width="1" x="12" y="17"></rect><rect height="1" width="1" x="14" y="17"></rect><rect height="1" width="1" x="16" y="17"></rect><rect height="1" width="1" x="18" y="17"></rect><rect height="1" width="1" x="20" y="17"></rect><rect height="1" width="1" x="23" y="17"></rect><rect height="1" width="1" x="25" y="17"></rect><rect height="1" width="1" x="27" y="17"></rect><rect height="1" width="1" x="1" y="18"></rect><rect height="1" width="1" x="2" y="18"></rect><rect height="1" width="1" x="4" y="18"></rect><rect height="1" width="1" x="5" y="18"></rect><rect height="1" width="1" x="8" y="18"></rect><rect height="1" width="1" x="11" y="18"></rect><rect height="1" width="1" x="14" y="18"></rect><rect height="1" width="1" x="15" y="18"></rect><rect height="1" width="1" x="17" y="18"></rect><rect height="1" width="1" x="18" y="18"></rect><rect height="1" width="1" x="21" y="18"></rect><rect height="1" width="1" x="24" y="18"></rect><rect height="1" width="1" x="27" y="18"></rect><rect height="1" width="1" x="28" y="18"></rect><rect height="1" width="1" x="1" y="19"></rect><rect height="1" width="1" x="2" y="19"></rect><rect height="1" width="1" x="3" y="19"></rect><rect height="1" width="1" x="4" y="19"></rect><rect height="1" width="1" x="5" y="19"></rect><rect height="1" width="1" x="6" y="19"></rect><rect height="1" width="1" x="14" y="19"></rect><rect height="1" width="1" x="15" y="19"></rect><rect height="1" width="1" x="16" y="19"></rect><rect height="1" width="1" x="17" y="19"></rect><rect height="1" width="1" x="18" y="19"></rect><rect height="1" width="1" x="19" y="19"></rect><rect height="1" width="1" x="27" y="19"></rect><rect height="1" width="1" x="28" y="19"></rect><rect height="1" width="1" x="0" y="20"></rect><rect height="1" width="1" x="5" y="20"></rect><rect height="1" width="1" x="6" y="20"></rect><rect height="1" width="1" x="7" y="20"></rect><rect height="1" width="1" x="11" y="20"></rect><rect height="1" width="1" x="12" y="20"></rect><rect height="1" width="1" x="13" y="20"></rect><rect height="1" width="1" x="18" y="20"></rect><rect height="1" width="1" x="19" y="20"></rect><rect height="1" width="1" x="20" y="20"></rect><rect height="1" width="1" x="24" y="20"></rect><rect height="1" width="1" x="25" y="20"></rect><rect height="1" width="1" x="26" y="20"></rect><rect height="1" width="1" x="0" y="21"></rect><rect height="1" width="1" x="3" y="21"></rect><rect height="1" width="1" x="5" y="21"></rect><rect height="1" width="1" x="8" y="21"></rect><rect height="1" width="1" x="10" y="21"></rect><rect height="1" width="1" x="11" y="21"></rect><rect height="1" width="1" x="13" y="21"></rect><rect height="1" width="1" x="16" y="21"></rect><rect height="1" width="1" x="18" y="21"></rect><rect height="1" width="1" x="21" y="21"></rect><rect height="1" width="1" x="23" y="21"></rect><rect height="1" width="1" x="24" y="21"></rect><rect height="1" width="1" x="26" y="21"></rect><rect height="1" width="1" x="7" y="22"></rect><rect height="1" width="1" x="10" y="22"></rect><rect height="1" width="1" x="12" y="22"></rect><rect height="1" width="1" x="13" y="22"></rect><rect height="1" width="1" x="15" y="22"></rect><rect height="1" width="1" x="18" y="22"></rect><rect height="1" width="1" x="20" y="22"></rect><rect height="1" width="1" x="23" y="22"></rect><rect height="1" width="1" x="25" y="22"></rect><rect height="1" width="1" x="26" y="22"></rect><rect height="1" width="1" x="28" y="22"></rect><rect height="1" width="1" x="10" y="23"></rect><rect height="1" width="1" x="11" y="23"></rect><rect height="1" width="1" x="12" y="23"></rect><rect height="1" width="1" x="16" y="23"></rect><rect height="1" width="1" x="17" y="23"></rect><rect height="1" width="1" x="18" y="23"></rect><rect height="1" width="1" x="23" y="23"></rect><rect height="1" width="1" x="24" y="23"></rect><rect height="1" width="1" x="25" y="23"></rect><rect height="1" width="1" x="7" y="24"></rect><rect height="1" width="1" x="8" y="24"></rect><rect height="1" width="1" x="9" y="24"></rect><rect height="1" width="1" x="17" y="24"></rect><rect height="1" width="1" x="18" y="24"></rect><rect height="1" width="1" x="19" y="24"></rect><rect height="1" width="1" x="20" y="24"></rect><rect height="1" width="1" x="21" y="24"></rect><rect height="1" width="1" x="22" y="24"></rect><rect height="1" width="1" x="8" y="25"></rect><rect height="1" width="1" x="9" y="25"></rect><rect height="1" width="1" x="12" y="25"></rect><rect height="1" width="1" x="15" y="25"></rect><rect height="1" width="1" x="18" y="25"></rect><rect height="1" width="1" x="19" y="25"></rect><rect height="1" width="1" x="21" y="25"></rect><rect height="1" width="1" x="22" y="25"></rect><rect height="1" width="1" x="25" y="25"></rect><rect height="1" width="1" x="28" y="25"></rect><rect height="1" width="1" x="7" y="26"></rect><rect height="1" width="1" x="9" y="26"></rect><rect height="1" width="1" x="11" y="26"></rect><rect height="1" width="1" x="13" y="26"></rect><rect height="1" width="1" x="16" y="26"></rect><rect height="1" width="1" x="18" y="26"></rect><rect height="1" width="1" x="20" y="26"></rect><rect height="1" width="1" x="22" y="26"></rect><rect height="1" width="1" x="24" y="26"></rect><rect height="1" width="1" x="26" y="26"></rect><rect height="1" width="1" x="8" y="27"></rect><rect height="1" width="1" x="9" y="27"></rect><rect height="1" width="1" x="13" y="27"></rect><rect height="1" width="1" x="14" y="27"></rect><rect height="1" width="1" x="17" y="27"></rect><rect height="1" width="1" x="18" y="27"></rect><rect height="1" width="1" x="21" y="27"></rect><rect height="1" width="1" x="22" y="27"></rect><rect height="1" width="1" x="26" y="27"></rect><rect height="1" width="1" x="27" y="27"></rect><rect height="1" width="1" x="7" y="28"></rect><rect height="1" width="1" x="8" y="28"></rect><rect height="1" width="1" x="9" y="28"></rect><rect height="1" width="1" x="10" y="28"></rect><rect height="1" width="1" x="11" y="28"></rect><rect height="1" width="1" x="12" y="28"></rect><rect height="1" width="1" x="13" y="28"></rect><rect height="1" width="1" x="14" y="28"></rect><rect height="1" width="1" x="15" y="28"></rect><rect height="1" width="1" x="16" y="28"></rect><rect height="1" width="1" x="17" y="28"></rect><rect height="1" width="1" x="18" y="28"></rect><rect height="1" width="1" x="19" y="28"></rect><rect height="1" width="1" x="20" y="28"></rect><rect height="1" width="1" x="21" y="28"></rect><rect height="1" width="1" x="22" y="28"></rect><rect height="1" width="1" x="23" y="28"></rect><rect height="1" width="1" x="24" y="28"></rect><rect height="1" width="1" x="25" y="28"></rect><rect height="1" width="1" x="26" y="28"></rect><rect height="1" width="1" x="27" y="28"></rect><rect height="1" width="1" x="28" y="28"></rect></g></svg></div><div class="register-kicker">ONLINE REGISTRACE</div><h3>PŘIHLAS SE<br/>NA START.</h3><a class="cta blue-cta" href="#">REGISTRACE ZAVŘENA</a></div></div></section>
+<section class="route v11-section fade-up" id="trasa">
+<div class="v11-wrap route-grid route-grid-v13">
+<div class="route-copy">
+<div class="v11-kicker">PROFIL TRATĚ</div>
+<h2 class="v11-title">Z VARNSDORFU<br/>AŽ NA VRCHOL.</h2>
+<p>Deset kilometrů, které postupně opustí město a zvednou tě až k rozhledně Jedlová. Krátké, intenzivní a nezaměnitelné.</p>
+<div class="route-stats route-stats-v13">
+<div class="route-stat"><b>10 KM</b><span>DÉLKA</span></div>
+<div class="route-stat"><b>400 M+</b><span>PŘEVÝŠENÍ</span></div>
+<div class="route-stat"><b>VARNSDORF</b><span>START</span></div>
+<div class="route-stat"><b>774 M</b><span>JEDLOVÁ</span></div>
+</div>
+</div>
+<div class="profile-stage">
+<div class="route-viz-card map-card-v15 map-card-v16">
+<div class="route-viz-head"><span>MAPA TRASY</span><span>OPENSTREETMAP · 10 KM</span></div>
+<div aria-label="Interaktivní mapa trasy Tour de Jedlová" id="tdj-map-v192"></div>
+</div>
+<div class="route-viz-card profile-card-v15">
+<div class="route-viz-head"><span>VÝŠKOVÝ PROFIL</span><span>400 M+</span></div>
+<svg aria-label="Výškový profil Tour de Jedlová" class="tdj-profile-svg" role="img" viewbox="0 0 1200 430">
+<defs>
+<lineargradient id="tdjProfileFill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#59adf7" stop-opacity=".72"></stop>
+<stop offset="100%" stop-color="#59adf7" stop-opacity=".08"></stop>
+</lineargradient>
+</defs>
+<line class="tdj-profile-grid" x1="80" x2="1165" y1="322.0" y2="322.0"></line><text class="tdj-profile-axis" text-anchor="end" x="62" y="327.0">400</text><line class="tdj-profile-grid" x1="80" x2="1165" y1="250.2" y2="250.2"></line><text class="tdj-profile-axis" text-anchor="end" x="62" y="255.2">500</text><line class="tdj-profile-grid" x1="80" x2="1165" y1="178.5" y2="178.5"></line><text class="tdj-profile-axis" text-anchor="end" x="62" y="183.5">600</text><line class="tdj-profile-grid" x1="80" x2="1165" y1="106.7" y2="106.7"></line><text class="tdj-profile-axis" text-anchor="end" x="62" y="111.7">700</text><line class="tdj-profile-grid" x1="80" x2="1165" y1="35.0" y2="35.0"></line><text class="tdj-profile-axis" text-anchor="end" x="62" y="40.0">800</text><text class="tdj-profile-axis" text-anchor="middle" x="80.0" y="404">0 km</text><text class="tdj-profile-axis" text-anchor="middle" x="314.6" y="404">2 km</text><text class="tdj-profile-axis" text-anchor="middle" x="549.2" y="404">4 km</text><text class="tdj-profile-axis" text-anchor="middle" x="783.8" y="404">6 km</text><text class="tdj-profile-axis" text-anchor="middle" x="1018.4" y="404">8 km</text><text class="tdj-profile-axis" text-anchor="middle" x="1165.0" y="404">9,25 km</text>
+<polygon class="tdj-profile-area" points="80.0,365.0 80.0,350.7 115.2,346.3 150.4,343.5 185.6,342.8 220.8,342.8 255.9,337.7 291.1,336.3 326.3,334.9 361.5,337.0 396.7,336.3 431.9,332.7 467.1,331.3 502.3,329.1 537.5,326.3 572.6,322.0 607.8,314.8 643.0,304.0 678.2,289.7 713.4,268.2 748.6,246.6 783.8,217.9 819.0,196.4 854.2,189.2 889.4,187.1 924.5,174.9 959.7,167.7 994.9,157.0 1030.1,146.2 1065.3,131.8 1100.5,124.7 1123.9,106.7 1147.4,92.4 1165.0,63.7 1165.0,365.0"></polygon>
+<polyline class="tdj-profile-line" id="tdj-profile-line" points="80.0,350.7 115.2,346.3 150.4,343.5 185.6,342.8 220.8,342.8 255.9,337.7 291.1,336.3 326.3,334.9 361.5,337.0 396.7,336.3 431.9,332.7 467.1,331.3 502.3,329.1 537.5,326.3 572.6,322.0 607.8,314.8 643.0,304.0 678.2,289.7 713.4,268.2 748.6,246.6 783.8,217.9 819.0,196.4 854.2,189.2 889.4,187.1 924.5,174.9 959.7,167.7 994.9,157.0 1030.1,146.2 1065.3,131.8 1100.5,124.7 1123.9,106.7 1147.4,92.4 1165.0,63.7"></polyline>
+<circle class="tdj-profile-dot" cx="80.0" cy="350.7" id="tdj-profile-dot" r="8"></circle>
+<text class="tdj-profile-label" x="88.0" y="380.7">VARNSDORF · START</text>
+<text class="tdj-profile-label" text-anchor="end" x="1157.0" y="45.7">JEDLOVÁ · CÍL</text>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<section class="gallery v11-section" id="galerie"><div class="v11-wrap"><div class="v11-kicker">ATMOSFÉRA TDJ</div><h2 class="v11-title">TOHLE JE<br/>TOUR DE JEDLOVÁ.</h2><p class="v11-lead">Start, první metry, asfalt, kopec, les, fanoušci a chvíle v cíli. Fotky jsou nejrychlejší cesta zpátky do závodu.</p><div class="mosaic mosaic-v12"><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-002.jpg"/></figure><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-003.jpg"/></figure><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-004.jpg"/></figure><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-005.jpg"/></figure><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-006.jpg"/></figure><figure><img alt="Atmosféra Tour de Jedlová" src="assets/images/embedded/image-007.jpg"/></figure></div><div class="gallery-years"><b>PROHLÉDNOUT FOTOGALERIE</b><div class="year-links"><a id="galleryLink1" href="#fotogalerie-2026">2026 →</a><a id="galleryLink2" href="#fotogalerie-2025">2025 →</a><a id="galleryLink3" href="#fotogalerie-2024">2024 →</a><a id="galleryLinkOther" href="#fotogalerie-ostatni">OSTATNÍ →</a></div></div></div></section>
+<section class="results v11-section" id="vysledky"><div class="v11-wrap"><div class="v11-kicker">ČASY &amp; POŘADÍ</div><h2 class="v11-title">VÝSLEDKY<br/>ZÁVODU.</h2><div class="results-card"><strong id="currentResultsLabel">TDJ 2026</strong><a id="currentResultsLink" href="https://www.sportt.cz/racesResults/resultlist/1536" rel="noopener" target="_blank">VÝSLEDKY →</a></div><div class="archive"><a href="https://www.sportt.cz/racesResults/resultlist/1448" rel="noopener" target="_blank">2025</a><a href="https://www.sportt.cz/racesResults/resultlist/1359" rel="noopener" target="_blank">2024</a></div></div></section>
+<section class="help v11-section" id="pomahame"><div class="v11-wrap help-grid"><div><div class="v11-kicker">TDJ POMÁHÁ</div><h2 class="v11-title">NEJSME JEN ZÁVOD.<br/>JSME KOMUNITA.</h2><p>Tour de Jedlová dokáže spojit lidi i mimo závodní trať. Součástí posledních ročníků je pomoc dětem a rodinám, které ji skutečně potřebují.</p></div><div class="help-cards"><article class="help-card"><span class="help-year">2026</span><b>Pomáháme Radimkovi</b><p>Radimek svádí od narození boj se vzácným metabolickým onemocněním a potřebuje nepřetržitou péči své rodiny.</p><a class="text-link" data-story="radimek2026" href="#radimek2026">PŘÍBĚH →</a></article><article class="help-card"><span class="help-year">2025</span><b>Pomáháme Tomáškovi</b><p>Tomášek si za svůj krátký život prošel cestou, která by byla náročná i pro dospělého. Společně se svou rodinou ale bojuje dál.</p><a class="text-link" data-story="tomasek2025" href="#tomasek2025">PŘÍBĚH →</a></article></div></div></section>
+<section class="partners v11-section" id="partneri">
+<div class="v11-wrap">
+<div class="v11-kicker">DĚKUJEME</div>
+<h2 class="v11-title">PARTNEŘI TDJ.</h2>
+<div class="partners-group">
+<div class="partners-heading partners-heading-rail">PARTNERSKÁ MĚSTA A OBCE</div>
+<div class="municipality-grid v173-municipalities">
+<div class="municipality-logo"><a aria-label="Město Varnsdorf" href="https://www.varnsdorf.cz/cz/" rel="noopener" target="_blank"><img alt="Město Varnsdorf" src="assets/images/embedded/image-008.png"/></a></div>
+<div class="municipality-logo"><a aria-label="Obec Dolní Podluží" class="dolni-podluzi-link" href="https://www.dolnipodluzi.cz/" rel="noopener" target="_blank"><img alt="Obec Dolní Podluží" src="assets/images/embedded/image-009.png"/></a></div>
+<div class="municipality-logo jiretin-clean">
+<a aria-label="Jiřetín pod Jedlovou" href="https://www.jiretin.cz/" rel="noopener" target="_blank"><img alt="Jiřetín pod Jedlovou" src="assets/images/embedded/image-010.png"/><div class="jiretin-name-v178"><strong>JIŘETÍN</strong><span>POD JEDLOVOU</span></div></a></div>
+</div>
+</div>
+</div>
+<div class="partners-group race-partners">
+<div class="partners-heading partners-heading-rail">PARTNEŘI ZÁVODU</div>
+<div class="partner-grid"><div class="partner partner-logo-card"><img alt="102" loading="lazy" src="assets/images/embedded/image-011.png"/></div><div class="partner partner-logo-card"><img alt="ABX" loading="lazy" src="assets/images/embedded/image-012.png"/></div><div class="partner partner-logo-card"><img alt="PerníkManufaktury" loading="lazy" src="assets/images/embedded/image-013.png"/></div><div class="partner partner-logo-card"><img alt="FOXMARK" loading="lazy" src="assets/images/embedded/image-014.png"/></div><div class="partner partner-logo-card"><img alt="Bartys" loading="lazy" src="assets/images/embedded/image-015.png"/></div><div class="partner partner-logo-card"><img alt="BEA" loading="lazy" src="assets/images/embedded/image-016.png"/></div><div class="partner partner-logo-card"><img alt="Eurogreen" loading="lazy" src="assets/images/embedded/image-017.png"/></div><div class="partner partner-logo-card"><img alt="Herby Servis" loading="lazy" src="assets/images/embedded/image-018.png"/></div><div class="partner partner-logo-card"><img alt="GALLI" loading="lazy" src="assets/images/embedded/image-019.png"/></div><div class="partner partner-logo-card"><img alt="BCH" loading="lazy" src="assets/images/embedded/image-020.png"/></div><div class="partner partner-logo-card"><img alt="Hosana" loading="lazy" src="assets/images/embedded/image-021.png"/></div><div class="partner partner-logo-card"><img alt="JL projects" loading="lazy" src="assets/images/embedded/image-022.png"/></div><div class="partner partner-logo-card"><img alt="Kovo Kraus" loading="lazy" src="assets/images/embedded/image-023.png"/></div><div class="partner partner-logo-card"><img alt="Kocour" loading="lazy" src="assets/images/embedded/image-024.png"/></div><div class="partner partner-logo-card"><img alt="Milko" loading="lazy" src="assets/images/embedded/image-025.png"/></div><div class="partner partner-logo-card"><img alt="KRISTIANO" loading="lazy" src="assets/images/embedded/image-026.png"/></div><div class="partner partner-logo-card"><img alt="KURANDA" loading="lazy" src="assets/images/embedded/image-027.png"/></div><div class="partner partner-logo-card"><img alt="Nobilis" loading="lazy" src="assets/images/embedded/image-028.png"/></div><div class="partner partner-logo-card"><img alt="Penzinon Jedlová" loading="lazy" src="assets/images/embedded/image-029.png"/></div><div class="partner partner-logo-card"><img alt="Orkla foods" loading="lazy" src="assets/images/embedded/image-030.png"/></div><div class="partner partner-logo-card"><img alt="Pivovar Cvikov" loading="lazy" src="assets/images/embedded/image-031.png"/></div><div class="partner partner-logo-card"><img alt="Polotovary" loading="lazy" src="assets/images/embedded/image-032.png"/></div><div class="partner partner-logo-card"><img alt="Posedla" loading="lazy" src="assets/images/embedded/image-033.png"/></div><div class="partner partner-logo-card"><img alt="Proreko" loading="lazy" src="assets/images/embedded/image-034.png"/></div><div class="partner partner-logo-card"><img alt="RETOS" loading="lazy" src="assets/images/embedded/image-035.png"/></div><div class="partner partner-logo-card"><img alt="Sapeli" loading="lazy" src="assets/images/embedded/image-036.png"/></div><div class="partner partner-logo-card"><img alt="Severochema" loading="lazy" src="assets/images/embedded/image-037.png"/></div><div class="partner partner-logo-card"><img alt="Termi" loading="lazy" src="assets/images/embedded/image-038.png"/></div><div class="partner partner-logo-card"><img alt="VÚ" loading="lazy" src="assets/images/embedded/image-039.png"/></div><div class="partner partner-logo-card"><img alt="Pijánofka" loading="lazy" src="assets/images/embedded/image-040.png"/></div></div>
+</div>
+</section>
+<section class="club v11-section" id="cc-varnsdorf"><div class="v11-wrap club-grid"><div><div class="v11-kicker">CYKLISTIKA VE VARNSDORFU</div><h2 class="v11-title">JEDEN ZÁVOD.<br/>JEDNA KOMUNITA.</h2><p class="v11-lead">CC Varnsdorf je dlouhodobou součástí místní cyklistiky a komunity kolem Tour de Jedlová. Spojuje děti, dospělé i všechny, pro které je kolo součástí života.</p><a class="text-link" href="https://ccvarnsdorf.xf.cz/" rel="noopener" target="_blank">CC VARNSDORF <span>→</span></a></div><div class="club-mark club-logo"><img alt="CC Varnsdorf" src="assets/images/embedded/image-041.svg"/></div></div></section>
+
+<footer class="tdj-footer tdj-footer-v20">
+  <div class="footer-v20-top">
+    <a aria-label="Tour de Jedlová" class="footer-v20-brand" href="#top"><img alt="TDJ" src="assets/images/embedded/image-042.svg"/></a>
+
+    <div class="footer-v20-contact">
+      <div class="footer-v20-title">KONTAKT</div>
+      <div class="footer-v20-rule"></div>
+
+      <div class="footer-v20-person">
+        <strong>Tereza Císařová</strong>
+        <a class="footer-v20-phone" href="tel:+420777279468" aria-label="Zavolat – Tereza Císařová"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg><span>+420 777 279 468</span></a>
+        <a class="footer-v20-email-icon" href="mailto:cisarovat@email.cz" aria-label="Napsat e-mail – Tereza Císařová"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
+      </div>
+
+      <div class="footer-v20-person">
+        <strong>Tomáš Hurt</strong>
+        <a class="footer-v20-phone" href="tel:+420723810790" aria-label="Zavolat – Tomáš Hurt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg><span>+420 723 810 790</span></a>
+        <a class="footer-v20-email-icon" href="mailto:tomhurt@seznam.cz" aria-label="Napsat e-mail – Tomáš Hurt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer-v20-social">
+      <div class="footer-v20-title">SLEDUJTE NÁS</div>
+      <div class="footer-v20-rule"></div>
+      <div class="footer-v20-social-row">
+<a aria-label="Instagram" href="https://www.instagram.com/tourdejedlova_ccvarnsdorf?igsi=MWt6N3NxdDFkaTRrcg==" target="_blank" rel="noopener noreferrer" title="Instagram"><svg viewbox="0 0 32 32"><rect height="20" rx="5" width="20" x="6" y="6"></rect><circle cx="16" cy="16" r="5"></circle><circle class="fill-dot" cx="22.5" cy="9.5" r="1.2"></circle></svg></a>
+<a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100088861742521&amp;locale=cs_CZ" target="_blank" rel="noopener noreferrer" title="Facebook"><svg class="fb" viewbox="0 0 32 32"><path d="M18.3 27V17.2h3.3l.5-3.8h-3.8V11c0-1.1.3-1.9 1.9-1.9h2V5.7c-.3 0-1.5-.2-2.9-.2-2.9 0-4.9 1.8-4.9 5v2.8h-3.3v3.8h3.3V27h3.9Z"></path></svg></a>
+</div>
+    </div>
+
+    <div class="footer-v20-bottom">
+      <div class="footer-v20-copyright">© 2026 TDJ – TOUR DE JEDLOVÁ</div>
+      <div class="footer-v20-designed"><span>DESIGNED by</span><img alt="JL" src="assets/images/embedded/image-043.png"/></div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<section aria-hidden="true" class="tdj-prop-page" id="propozice">
+<div class="tdj-prop-top">
+<button class="tdj-prop-back" id="closePropozice">← ZPĚT NA ZÁVOD</button>
+<strong>PROPOZICE</strong>
+</div>
+<main class="tdj-prop-main">
+<header class="tdj-prop-hero">
+<div aria-hidden="true" class="tdj-prop-watermark">TDJ.</div>
+<div class="tdj-prop-hero-copy">
+<div class="tdj-prop-kicker">TOUR DE JEDLOVÁ 2027</div>
+<h1>PROPOZICE<br/>ZÁVODU.</h1>
+<p class="tdj-prop-lead">Tradiční závod horských kol z Varnsdorfu přes Dolní Podluží a Jiřetín pod Jedlovou až k rozhledně Jedlová. Závod je určen pro širokou veřejnost.</p>
+</div>
+</header>
+<div aria-label="Základní údaje závodu" class="tdj-prop-quick">
+<div class="tdj-prop-quick-item"><strong>10 KM</strong><span>Délka trasy</span></div>
+<div class="tdj-prop-quick-item"><strong>400 M+</strong><span>Převýšení</span></div>
+<div class="tdj-prop-quick-item"><strong>10:00</strong><span>Start</span></div>
+<div class="tdj-prop-quick-item"><strong>JEDLOVÁ</strong><span>Cíl závodu</span></div>
+</div>
+<div class="tdj-prop-grid">
+<section class="tdj-prop-card">
+<h2>ZÁVOD</h2>
+<p><strong>Ročník:</strong> 29. ročník<br/>
+<strong>Termín:</strong> bude doplněn<br/>
+<strong>Start:</strong> 10:00<br/>
+<strong>Místo startu:</strong> Varnsdorf, restaurace Lidová zahrada<br/>
+<strong>Cíl:</strong> rozhledna Jedlová<br/>
+<strong>Délka:</strong> 10 km<br/>
+<strong>Převýšení:</strong> 400 m+</p>
+</section>
+<section class="tdj-prop-card">
+<h2>REGISTRACE A PREZENTACE</h2>
+<p><strong>Online registrace:</strong> odkaz bude doplněn<br/>
+<strong>Startovné online:</strong> bude doplněno<br/>
+<strong>Prezentace na místě:</strong> 9:30–9:50 před restaurací Lidová zahrada<br/>
+<strong>Startovné na místě:</strong> bude doplněno</p>
+</section>
+<section class="tdj-prop-card tdj-prop-wide">
+<h2>TRASA</h2>
+<p>Varnsdorf – Dolní Podluží – Jiřetín pod Jedlovou – Křížová hora – Jedlová. Trasa pokračuje od restaurace Lidová zahrada ulicí Československých letců, ulicí Plzeňská a po silnici č. 264 do Dolního Podluží. Přes kruhový objezd vede do Jiřetína pod Jedlovou, přes náměstí a dále po štěrkové cestě na Křížovou horu, kolem Ranče a následně k asfaltové komunikaci vedoucí k rozhledně Jedlová.</p>
+</section>
+<section class="tdj-prop-card tdj-prop-wide">
+<h2>KATEGORIE</h2>
+<ul class="tdj-prop-cats">
+<li>A1 – chlapci do 15 let</li><li>A2 – dívky do 15 let</li>
+<li>B – muži 16–29 let</li><li>C – muži 30–39 let</li>
+<li>D – muži 40–49 let</li><li>E – muži 50–59 let</li>
+<li>F – muži 60–69 let</li><li>G – muži 70+</li>
+<li>H – ženy do 40 let</li><li>I – ženy 40–59 let</li>
+<li>J – ženy 60+</li>
+</ul>
+</section>
+<section class="tdj-prop-card tdj-prop-wide">
+<h2>PRAVIDLA A BEZPEČNOST</h2>
+<p>Závod se jede dle rozpisu závodu za plného silničního provozu na neuzavřené trati. Závodníci jsou povinni dodržovat pravidla silničního provozu a dbát pokynů pořadatelů a Policie. Závod se jede za každého počasí. Pořadatelé neručí za škody závodníkům vzniklé ani jimi způsobené. Všichni závodníci startují na vlastní nebezpečí. Osoby mladší 18 let mohou startovat s písemným souhlasem zákonného zástupce, osoby mladší 15 let pouze v doprovodu zákonného zástupce. Cyklistická přilba je povinná.</p>
+</section>
+<section class="tdj-prop-card">
+<h2>VÝSLEDKY</h2>
+<p>Výsledky budou vyhlášeny v cíli u restaurace Jedlová / rozhledny Jedlová.</p>
+</section>
+<section class="tdj-prop-card tdj-prop-wide">
+<div class="tdj-prop-organizers">
+<div class="label">POŘADATEL</div>
+<div class="tdj-prop-person">
+<strong>TEREZA CÍSAŘOVÁ</strong>
+<span>Organizační tým Tour de Jedlová</span>
+</div>
+<div class="tdj-prop-person">
+<strong>TOMÁŠ HURT</strong>
+<span>Organizační tým Tour de Jedlová</span>
+</div>
+</div>
+</section>
+</div>
+<div class="tdj-prop-bottom-nav">
+<button id="closePropoziceBottom" type="button">← ZPĚT NA ZÁVOD</button>
+</div>
+</main>
+</section>
+
+<section class="tdj-story" id="tomasek2025">
+<header class="tdj-st"><button class="closeStory">← ZPĚT NA POMÁHÁME</button><strong>POMÁHÁME · 2025</strong></header>
+<main class="tdj-sm">
+<div class="tdj-sh"><div class="tdj-mark">TDJ.</div><div><div class="tdj-k">TOUR DE JEDLOVÁ · POMÁHÁME 2025</div><h1>POMÁHÁME<br/>TOMÁŠKOVI.</h1><p class="tdj-lead">Tomášek si za svůj krátký život prošel cestou, která by byla náročná i pro dospělého. Společně se svou rodinou ale bojuje dál.</p></div></div>
+<div class="tdj-sb">
+<figure class="tdj-story-photo tdj-story-photo-wide"><img alt="Tomášek s rodinou během Tour de Jedlová 2025" src="assets/images/embedded/image-044.png"/></figure>
+<section><h2>TOMÁŠKŮV PŘÍBĚH</h2><p>Tomáškovi ještě nebyly ani tři roky, ale za svůj krátký život už musel zvládnout mnohem víc, než je pro malé dítě běžné.</p><p>Od útlého věku prochází řadou vyšetření a lékaři u něj postupně diagnostikovali několik závažných zdravotních problémů. Tomášek se potýká mimo jiné s opožděným psychomotorickým vývojem, těžkou epilepsií, výrazně sníženým svalovým napětím a centrálním postižením zraku. Přes rozsáhlá vyšetření navíc stále není přesná příčina všech jeho obtíží zcela objasněna.</p><p>V únoru 2025 mu lékaři zavedli PEG sondu přímo do žaludku. Rodiče ho jejím prostřednictvím několikrát denně krmí a podávají mu tekutiny. Tomášek se zároveň snaží jíst i běžným způsobem, i když je to pro něj často velmi náročné.</p><p>Jeho každodenní život proto znamená nejen péči rodičů, ale také pravidelná vyšetření, terapie a další hledání cesty, která by mu mohla pomoci.</p><p>Tomáškovi rodiče jsou sportovci, běžci a ultraběžci. Překážky jsou tedy něco, co dobře znají. Tahle životní trať je ale úplně jiná než všechny, které kdy absolvovali.</p><p><strong>Přesto mají jasno: jako rodina bojují společně a nevzdávají se.</strong></p></section>
+<section><h2>TDJ POMÁHÁ</h2><p>Dne 10. srpna 2025 se na start 27. ročníku Tour de Jedlová postavilo rekordních 118 závodníků. Tentokrát ale nešlo jen o kilometry, čas a cestu do cíle. Součástí závodu byla také pomoc Tomáškovi a jeho rodině.</p><div class="tdj-amt">28 153 <span>KČ</span></div>
+<div class="tdj-breakdown"><div><strong>10 000 Kč</strong><span>Dražba dresu Jana Strože</span></div><div><strong>5 354 Kč</strong><span>Účastníci a návštěvníci TDJ</span></div><div><strong>12 799 Kč</strong><span>Transparentní účet</span></div></div>
+<p>Jedním z hlavních momentů byla dražba dresu mistra České republiky Jana Strože. Společně s příspěvky účastníků, návštěvníků a dary zaslanými na transparentní účet se tak podařilo pro Tomáška vybrat 28 153 Kč.</p></section>
+<section><h2>DĚKUJEME</h2><p>Děkujeme všem závodníkům, organizátorům, partnerům, dárcům, fanouškům i každému, kdo se do pomoci zapojil. Zvláštní poděkování patří také Janu Strožovi za dres věnovaný do dražby.</p><p>Tour de Jedlová je především o sportu, společném zážitku a lidech. O to větší radost máme, když dokážeme společně pomoci někomu, kdo právě běží mnohem těžší životní závod.</p><strong class="tdj-thanks">DĚKUJEME, ŽE POMÁHÁTE S NÁMI.</strong></section>
+</div></main></section>
+<section class="tdj-story" id="radimek2026"><header class="tdj-st"><button id="closeRad">← ZPĚT NA POMÁHÁME</button><strong>POMÁHÁME · 2026</strong></header><main class="tdj-sm"><div class="tdj-sh"><div class="tdj-mark">TDJ.</div><div><div class="tdj-k">TOUR DE JEDLOVÁ · POMÁHÁME 2026</div><h1>POMÁHÁME<br/>RADIMKOVI.</h1><p class="tdj-lead">Radimkovi je téměř pět let. Od narození se potýká s řadou zdravotních komplikací a jeho cesta nebyla jednoduchá.</p></div></div><div class="tdj-sb">
+<figure class="tdj-story-photo tdj-story-photo-portrait"><img alt="Radimek" src="assets/images/embedded/image-045.png"/></figure>
+<section><h2>RADIMKŮV PŘÍBĚH</h2><p>Po měsících vyšetření a nejistoty mu lékaři diagnostikovali methylmalonovou acidémii (MMA typu cblA) – velmi vzácné dědičné metabolické onemocnění, se kterým bude žít celý život.</p><p>Nemoc ovlivňuje jeho vývoj i fungování organismu. Radimek má také těžkou formu autismu, ADHD a poruchu řeči. Je neverbální, a nemůže tak svým rodičům jednoduše říct, co potřebuje nebo co ho bolí.</p><p>Kvůli svému zdravotnímu stavu je krmen pomocí PEG sondy přímo do žaludku. Potřebuje speciální výživu, pravidelné terapie, léky a nepřetržitou péči své rodiny.</p><p>Velkou výzvou je také vytvoření bezpečného a stabilního bydlení přizpůsobeného jeho potřebám, které rodině umožní o Radimka dlouhodobě pečovat doma.</p></section>
+<section><h2>TDJ POMÁHÁ</h2><p>Během TDJ 2026 jsme se rozhodli Radimka a jeho rodinu podpořit. Díky prodeji triček a ponožek a dobrovolným příspěvkům do kasičky se společně podařilo vybrat:</p><div class="tdj-amt">13 333 <span>KČ</span></div><p>Peníze pomohou rodině s náklady spojenými s péčí o Radimka – od speciální výživy, terapií, zdravotnických a hygienických potřeb až po nezbytné pomůcky, dopravu k lékařům a postupné vytváření bezpečného prostředí pro jeho každodenní život.</p></section>
+<section><h2>DĚKUJEME</h2><p>Děkujeme všem závodníkům, návštěvníkům, partnerům i dobrovolníkům, kteří se do pomoci zapojili. Ať už koupí trička či ponožek, příspěvkem do kasičky, nebo jednoduše tím, že byli součástí celé akce.</p><strong class="tdj-thanks">DÍKY VÁM MŮŽE BÝT TDJ VÍC NEŽ JEN CYKLISTICKÝ ZÁVOD.</strong></section>
+</div></main></section>
+
+
+<!-- V19.15 / PŘÍBĚH TDJ -->
+<section aria-label="Příběh Tour de Jedlová" class="tdj-history-page" id="historie-tdj">
+<header class="tdj-history-top">
+<a class="tdj-history-back" href="#historie">← ZPĚT NA HISTORII ZÁVODU</a>
+<span>PŘÍBĚH TDJ</span>
+</header>
+<main class="tdj-history-main">
+<section class="tdj-history-hero">
+<div aria-hidden="true" class="tdj-history-mark">TDJ.</div>
+<div class="tdj-history-intro">
+<div class="tdj-history-kicker">TOUR DE JEDLOVÁ · HISTORIE &amp; TRADICE</div>
+<h1>28 LET<br/>NA CESTĚ<br/>K JEDLOVÉ.</h1>
+<p>Příběh Tour de Jedlová právě připravujeme. Brzy se ohlédneme za cestou od prvního ročníku až po dnešní podobu závodu.</p>
+</div>
+</section>
+<div class="tdj-history-bottom-nav">
+<a href="#historie">← ZPĚT NA HISTORII ZÁVODU</a>
+</div>
+</main>
+</section>
+
+
+
+<section aria-label="Fotogalerie 2026" class="tdj-gallery-page" id="fotogalerie-2026">
+<header class="tdj-gallery-top"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><span>FOTOGALERIE · 2026</span></header>
+<main class="tdj-gallery-main">
+<section class="tdj-gallery-hero">
+<div class="tdj-gallery-kicker">FOTOGRAFIE 2026</div>
+<h1>CELÝ ZÁVOD TDJ 2026<br/>V OBRAZECH.</h1>
+<p>Fotografie z 28. ročníku Tour de Jedlová.</p>
+</section>
+<section class="tdj-gallery-content">
+<div aria-label="Výběr fotografií Tour de Jedlová 2026" class="tdj-2026-slider">
+<div class="tdj-2026-slide is-active"><img alt="Společná fotografie účastníků Tour de Jedlová 2026" src="assets/images/embedded/image-046.jpg"/></div>
+<div class="tdj-2026-slide"><img alt="Start Tour de Jedlová 2026" src="assets/images/embedded/image-047.jpg"/></div>
+<div class="tdj-2026-slide"><img alt="Závodník při stoupání na Jedlovou" src="assets/images/embedded/image-048.jpg"/></div>
+<div class="tdj-2026-slide"><img alt="Závodnice na trase Tour de Jedlová" src="assets/images/embedded/image-049.jpg"/></div>
+<div class="tdj-2026-slide"><img alt="Dětská závodnice při stoupání" src="assets/images/embedded/image-050.jpg"/></div>
+<div class="tdj-2026-slide"><img alt="Mladí cyklisté v cíli na Jedlové" src="assets/images/embedded/image-006.jpg"/></div>
+<button aria-label="Předchozí fotografie" class="tdj-2026-arrow tdj-2026-prev" type="button">‹</button><button aria-label="Další fotografie" class="tdj-2026-arrow tdj-2026-next" type="button">›</button>
+</div>
+<div aria-label="Výběr fotografie" class="tdj-2026-dots"></div>
+<div class="tdj-photo-links"><h3>FOTOGRAFOVÉ &amp; KOMPLETNÍ GALERIE</h3>
+<div class="tdj-photographer"><strong>LUBOŠ BAKUS</strong><div class="tdj-album-buttons"><a class="tdj-album-btn" href="https://www.rajce.idnes.cz/lubosbus/album/tour-de-jedlova-2026-9-8-2026" rel="noopener" target="_blank">PROHLÉDNOUT GALERII →</a></div></div>
+<div class="tdj-photographer"><strong>MARIÁN MAŠTRLA</strong><div class="tdj-album-buttons"><a class="tdj-album-btn" href="https://eu.zonerama.com/marianmastrla/Album/15977987" rel="noopener" target="_blank">GALERIE 01 →</a><a class="tdj-album-btn" href="https://eu.zonerama.com/marianmastrla/Album/15977983" rel="noopener" target="_blank">GALERIE 02 →</a><a class="tdj-album-btn" href="https://eu.zonerama.com/marianmastrla/Album/15977979" rel="noopener" target="_blank">GALERIE 03 →</a><a class="tdj-album-btn" href="https://eu.zonerama.com/marianmastrla/Album/15977976" rel="noopener" target="_blank">GALERIE 04 →</a></div></div>
+</div>
+</section>
+<nav class="tdj-gallery-bottom"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><a href="#">ZPĚT NA TDJ →</a></nav>
+</main></section>
+<section aria-label="Fotogalerie 2025" class="tdj-gallery-page" id="fotogalerie-2025"><header class="tdj-gallery-top"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><span>FOTOGALERIE · 2025</span></header><main class="tdj-gallery-main"><section class="tdj-gallery-hero"><div class="tdj-gallery-mark">TDJ.</div><div><div class="tdj-gallery-kicker">TOUR DE JEDLOVÁ · FOTOGALERIE</div><h1>2025.</h1><p>Fotografie z 27. ročníku Tour de Jedlová. Odkazy na kompletní alba budeme postupně doplňovat.</p></div></section><section class="tdj-gallery-content"><div class="tdj-gallery-kicker">FOTOGRAFIE 2025</div><h2>CELÝ ZÁVOD<br/>V OBRAZECH.</h2><p>Na tomto místě budou odkazy na jednotlivé galerie a fotografy z ročníku 2025.</p><div class="tdj-gallery-placeholder"><strong>ODKAZY NA FOTOGRAFIE</strong><span>budou doplněny</span></div></section><nav class="tdj-gallery-bottom"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><a href="#">ZPĚT NA TDJ →</a></nav></main></section>
+<section aria-label="Fotogalerie 2024" class="tdj-gallery-page" id="fotogalerie-2024"><header class="tdj-gallery-top"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><span>FOTOGALERIE · 2024</span></header><main class="tdj-gallery-main"><section class="tdj-gallery-hero"><div class="tdj-gallery-mark">TDJ.</div><div><div class="tdj-gallery-kicker">TOUR DE JEDLOVÁ · FOTOGALERIE</div><h1>2024.</h1><p>Fotografie z 26. ročníku Tour de Jedlová. Odkazy na kompletní alba budeme postupně doplňovat.</p></div></section><section class="tdj-gallery-content"><div class="tdj-gallery-kicker">FOTOGRAFIE 2024</div><h2>CELÝ ZÁVOD<br/>V OBRAZECH.</h2><p>Na tomto místě budou odkazy na jednotlivé galerie a fotografy z ročníku 2024.</p><div class="tdj-gallery-placeholder"><strong>ODKAZY NA FOTOGRAFIE</strong><span>budou doplněny</span></div></section><nav class="tdj-gallery-bottom"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><a href="#">ZPĚT NA TDJ →</a></nav></main></section>
+<section aria-label="Ostatní fotogalerie" class="tdj-gallery-page" id="fotogalerie-ostatni"><header class="tdj-gallery-top"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><span>FOTOGALERIE · OSTATNÍ</span></header><main class="tdj-gallery-main"><section class="tdj-gallery-hero"><div class="tdj-gallery-mark">TDJ.</div><div><div class="tdj-gallery-kicker">TOUR DE JEDLOVÁ · FOTOGALERIE</div><h1>OSTATNÍ<br/>ROKY.</h1><p>Starší ročníky Tour de Jedlová budeme postupně doplňovat tak, jak budeme dohledávat fotografie a původní alba.</p></div></section><section class="tdj-gallery-content"><div class="tdj-gallery-kicker">ARCHIV TDJ</div><h2>DALŠÍ ROKY.<br/>DALŠÍ PŘÍBĚHY.</h2><p>Sem postupně přibudou odkazy na fotografie z ročníků 2023, 2022 a dalších let historie TDJ.</p><div class="tdj-gallery-placeholder"><strong>STARŠÍ FOTOGALERIE</strong><span>budou postupně doplněny</span></div></section><nav class="tdj-gallery-bottom"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><a href="#">ZPĚT NA TDJ →</a></nav></main></section>
+
+<script src="data/settings.js"></script>
+<script src="assets/js/app.js"></script>
+</body></html>
