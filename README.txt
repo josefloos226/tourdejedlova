@@ -69,3 +69,8 @@ Historie:
 - po kliknutí se otevře připravená detailní stránka historie
 - detail zatím obsahuje pouze titul a informaci, že příběh připravujeme
 - původní provizorní dlouhé texty, rekordy a fakta jsou z detailu dočasně skryty
+
+
+TDJ Production V1.6
+===================
+Optimalizace obrazku pro rychlejsi web; nazvy a cesty zachovany.
