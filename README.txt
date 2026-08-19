@@ -74,3 +74,8 @@ Historie:
 TDJ Production V1.6
 ===================
 Optimalizace obrazku pro rychlejsi web; nazvy a cesty zachovany.
+
+
+TDJ Production V1.7
+===================
+Optimalizace nacitani: dalsi komprese obrazku/log, priorita prvniho obrazku a lazy loading ostatnich obrazku.
