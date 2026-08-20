@@ -79,3 +79,8 @@ Optimalizace obrazku pro rychlejsi web; nazvy a cesty zachovany.
 TDJ Production V1.7
 ===================
 Optimalizace nacitani: dalsi komprese obrazku/log, priorita prvniho obrazku a lazy loading ostatnich obrazku.
+
+
+TDJ Production V1.8
+===================
+5 schvalenych uprav: mobilni menu, mobilni galerie, centrovani mapy/profilu, ZAVRENO pres QR, odsazeni obou pribehu Pomahame.

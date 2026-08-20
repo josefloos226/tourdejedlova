@@ -207,3 +207,14 @@ document.addEventListener('DOMContentLoaded', function () {
   page.querySelector('.tdj-2026-prev').onclick=()=>go(i-1,true);page.querySelector('.tdj-2026-next').onclick=()=>go(i+1,true);
   page.querySelector('.tdj-2026-slider').addEventListener('mouseenter',()=>clearInterval(t));page.querySelector('.tdj-2026-slider').addEventListener('mouseleave',start);start();
 })();
+
+/* TDJ Production V1.8 — mobile navigation */
+(function(){
+ const nav=document.getElementById('nav'), toggle=document.getElementById('mobileMenuToggle');
+ const menu=nav?nav.querySelector('.menu'):null; if(!nav||!toggle||!menu)return;
+ function close(){nav.classList.remove('mobile-open');toggle.setAttribute('aria-expanded','false');}
+ toggle.addEventListener('click',function(e){e.stopPropagation();const o=nav.classList.toggle('mobile-open');toggle.setAttribute('aria-expanded',o?'true':'false');});
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+ document.addEventListener('click',e=>{if(nav.classList.contains('mobile-open')&&!nav.contains(e.target))close();});
+ window.addEventListener('resize',()=>{if(innerWidth>800)close();});
+})();
