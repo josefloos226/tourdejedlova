@@ -1837,3 +1837,20 @@ html { scroll-behavior: smooth; }
 #fotogalerie-2025 .tdj-2026-slider,#fotogalerie-2026 .tdj-2026-slider{display:block!important;width:100%!important;max-width:none!important;margin:0!important}
 #fotogalerie-2025 .tdj-photo-links,#fotogalerie-2026 .tdj-photo-links{width:100%!important;max-width:none!important}
 @media(max-width:760px){#fotogalerie-2025 .tdj-gallery-main,#fotogalerie-2026 .tdj-gallery-main{width:88vw!important}}
+
+
+/* V1.12 — Fotogalerie 2025: exact layout parity with Fotogalerie 2026 (desktop + mobile) */
+#fotogalerie-2025 .tdj-gallery-main{width:min(1120px,86vw)!important;max-width:none!important}
+#fotogalerie-2025 .tdj-gallery-hero{display:block!important;padding:10px 0 38px!important;border-bottom:0!important}
+#fotogalerie-2025 .tdj-gallery-hero h1{font-size:clamp(50px,5.6vw,82px)!important;line-height:.92!important;max-width:860px!important;margin:0 0 22px!important;letter-spacing:-.035em!important}
+#fotogalerie-2025 .tdj-gallery-hero p{font-size:18px!important;line-height:1.55!important;margin:0!important;max-width:700px!important}
+#fotogalerie-2025 .tdj-gallery-content{width:100%!important;max-width:none!important;margin:36px 0 0!important;padding:0!important;border-top:0!important}
+#fotogalerie-2025 .tdj-2026-slider{display:block!important;width:100%!important;max-width:none!important;margin:0!important}
+#fotogalerie-2025 .tdj-photo-links{width:100%!important;max-width:none!important}
+@media(max-width:760px){
+ #fotogalerie-2025 .tdj-gallery-main{width:88vw!important}
+ #fotogalerie-2025 .tdj-gallery-hero{display:block!important;gap:0!important;padding:10px 0 38px!important}
+ #fotogalerie-2025 .tdj-gallery-hero h1{font-size:clamp(42px,12vw,60px)!important;line-height:.92!important}
+ #fotogalerie-2025 .tdj-gallery-hero p{font-size:16px!important;line-height:1.55!important}
+ #fotogalerie-2025 .tdj-gallery-content{margin:36px 0 0!important}
+}

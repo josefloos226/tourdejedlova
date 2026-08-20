@@ -1,3 +1,9 @@
+TDJ Production V1.12
+
+Změna proti V1.11:
+- Fotogalerie 2025 sjednocena 1:1 s layoutem Fotogalerie 2026 na desktopu i mobilu.
+- Ostatní části webu beze změny.
+
 TDJ Production V1.11
 - Fotogalerie 2025 je samostatná podstránka stejně jako 2026.
 - 6 fotografií v automatickém slideru + šipky + tečky.
