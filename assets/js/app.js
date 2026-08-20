@@ -198,14 +198,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 (function(){
-  const page=document.getElementById('fotogalerie-2026'); if(!page) return;
-  const slides=[...page.querySelectorAll('.tdj-2026-slide')], dotsWrap=page.querySelector('.tdj-2026-dots'); let i=0,t;
-  slides.forEach((_,n)=>{const b=document.createElement('button');b.className='tdj-2026-dot'+(n===0?' is-active':'');b.type='button';b.setAttribute('aria-label','Fotografie '+(n+1));b.onclick=()=>go(n,true);dotsWrap.appendChild(b)});
-  const dots=[...dotsWrap.children];
-  function go(n,reset){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('is-active',k===i));dots.forEach((d,k)=>d.classList.toggle('is-active',k===i));if(reset) start()}
-  function start(){clearInterval(t);t=setInterval(()=>go(i+1,false),5000)}
-  page.querySelector('.tdj-2026-prev').onclick=()=>go(i-1,true);page.querySelector('.tdj-2026-next').onclick=()=>go(i+1,true);
-  page.querySelector('.tdj-2026-slider').addEventListener('mouseenter',()=>clearInterval(t));page.querySelector('.tdj-2026-slider').addEventListener('mouseleave',start);start();
+  function initGallery(id){
+    const page=document.getElementById(id); if(!page) return;
+    const slides=[...page.querySelectorAll('.tdj-2026-slide')], dotsWrap=page.querySelector('.tdj-2026-dots'); if(!slides.length||!dotsWrap)return; let i=0,t;
+    dotsWrap.innerHTML='';
+    slides.forEach((_,n)=>{const b=document.createElement('button');b.className='tdj-2026-dot'+(n===0?' is-active':'');b.type='button';b.setAttribute('aria-label','Fotografie '+(n+1));b.onclick=()=>go(n,true);dotsWrap.appendChild(b)});
+    const dots=[...dotsWrap.children];
+    function go(n,reset){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('is-active',k===i));dots.forEach((d,k)=>d.classList.toggle('is-active',k===i));if(reset) start()}
+    function start(){clearInterval(t);t=setInterval(()=>go(i+1,false),5000)}
+    const prev=page.querySelector('.tdj-2026-prev'),next=page.querySelector('.tdj-2026-next'),slider=page.querySelector('.tdj-2026-slider');
+    if(prev)prev.onclick=()=>go(i-1,true); if(next)next.onclick=()=>go(i+1,true);
+    if(slider){slider.addEventListener('mouseenter',()=>clearInterval(t));slider.addEventListener('mouseleave',start)} start();
+  }
+  initGallery('fotogalerie-2026');
+  initGallery('fotogalerie-2025');
 })();
 
 /* TDJ Production V1.8 — mobile navigation */
@@ -219,14 +225,3 @@ document.addEventListener('DOMContentLoaded', function () {
  window.addEventListener('resize',()=>{if(innerWidth>800)close();});
 })();
 
-/* TDJ Production V1.10 — Fotografie 2025 slider */
-(function(){
- const slider=document.getElementById('photo25Slider'), dots=document.getElementById('photo25Dots');
- if(!slider||!dots)return;
- const slides=[...slider.querySelectorAll('.photo25-slide')], btns=[...dots.querySelectorAll('.photo25-dot')];
- let i=0,t;
- function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('active',k===i));btns.forEach((b,k)=>b.classList.toggle('active',k===i));}
- function play(){clearInterval(t);t=setInterval(()=>show(i+1),4200);}
- btns.forEach((b,k)=>b.addEventListener('click',()=>{show(k);play();}));
- show(0);play();
-})();
