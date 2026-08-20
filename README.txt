@@ -11,3 +11,8 @@ TDJ Production V1.11
 - Sjednocená šířka galerií 2025/2026.
 - Desktop HERO používá start závodu pod novým názvem souboru kvůli cache.
 - Mobilní HERO a opravené centrování mapy/profilu zůstávají beze změny.
+
+
+TDJ Production V1.14
+====================
+Upraveny Propozice: startovne a prezentace, nove kategorie, pravidla a bezpecnost, zvyrazneni Poharu CC Varnsdorf. Ostatni casti V1.13 beze zmeny.
