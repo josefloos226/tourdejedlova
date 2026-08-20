@@ -84,3 +84,8 @@ Optimalizace nacitani: dalsi komprese obrazku/log, priorita prvniho obrazku a la
 TDJ Production V1.8
 ===================
 5 schvalenych uprav: mobilni menu, mobilni galerie, centrovani mapy/profilu, ZAVRENO pres QR, odsazeni obou pribehu Pomahame.
+
+TDJ Production V1.9
+- Fotogalerie 2025: 6-photo dynamic slider + external galleries (Luboš Bakus, Marian Maštrla)
+- Mobile route: map and elevation profile centered to the same axis
+- Hero: higher-resolution optimized WebP source
