@@ -1810,29 +1810,23 @@ html { scroll-behavior: smooth; }
  #tomasek2025 .tdj-mark,#radimek2026 .tdj-mark{margin-bottom:8px!important}
 }
 
-/* ===== TDJ Production V1.9 ===== */
-/* Higher-resolution hero source, still optimized for fast loading. */
-.hero-bg{background-image:url('../images/hero-tdj.webp')!important}
+/* ===== TDJ Production V1.10 ===== */
+.photo25-slider{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:22px;background:#eaf3f8;box-shadow:0 18px 45px rgba(10,70,110,.10)}
+.photo25-slide{position:absolute;inset:0;margin:0;opacity:0;transform:scale(1.025);transition:opacity .9s ease,transform 4.5s ease}
+.photo25-slide.active{opacity:1;transform:scale(1)}
+.photo25-slide img{display:block;width:100%;height:100%;object-fit:cover}
+.photo25-dots{display:flex;justify-content:center;gap:8px;margin:16px 0 28px}
+.photo25-dot{width:9px;height:9px;border:0;border-radius:50%;background:#bfd4e2;padding:0;cursor:pointer}
+.photo25-dot.active{background:#0875d1;transform:scale(1.25)}
+.photo25-links{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.photo25-link{display:flex;flex-direction:column;gap:5px;padding:20px 22px;border:1px solid #dceaf3;border-radius:16px;background:#fff;text-decoration:none;color:inherit}
+.photo25-link strong{color:#0d4b7a;font-size:18px}.photo25-link span{color:#67869b}
+.photo25-multi-links{display:flex;flex-wrap:wrap;gap:8px 14px}.photo25-multi-links a{color:#0875d1;text-decoration:none;font-weight:700}
 
-/* 2025 gallery follows the approved 2026 visual system. */
-#fotogalerie-2025 .tdj-gallery-main{width:min(1180px,88vw)}
-#fotogalerie-2025 .tdj-gallery-hero{display:block;padding:10px 0 52px}
-#fotogalerie-2025 .tdj-gallery-hero h1{font-size:clamp(58px,7vw,104px);max-width:900px;margin:0 0 22px}
-#fotogalerie-2025 .tdj-gallery-hero p{font-size:20px}
-#fotogalerie-2025 .tdj-gallery-content{width:100%;margin:52px 0 0;padding-top:0;border-top:0}
-.tdj-year-slider{position:relative;overflow:hidden;border-radius:22px;background:#eef5fb;aspect-ratio:16/9;box-shadow:0 16px 44px rgba(16,35,61,.08)}
-.tdj-year-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;pointer-events:none}
-.tdj-year-slide.is-active{opacity:1;pointer-events:auto}
-.tdj-year-slide img{width:100%;height:100%;object-fit:cover;display:block}
-.tdj-year-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:rgba(16,35,61,.38);color:#fff;font-size:24px;cursor:pointer;backdrop-filter:blur(4px);transition:.2s}
-.tdj-year-arrow:hover{background:#2476d7}.tdj-year-prev{left:20px}.tdj-year-next{right:20px}
-.tdj-year-dots{display:flex;justify-content:center;gap:9px;margin:18px 0 0}.tdj-year-dot{width:9px;height:9px;border-radius:50%;border:0;background:#c7d7e5;padding:0;cursor:pointer;transition:.2s}.tdj-year-dot.is-active{background:#2476d7;transform:scale(1.25)}
-
-/* Mobile: force both route visual cards onto the exact same centered 88vw axis. */
 @media(max-width:800px){
- #trasa > .v11-wrap.route-grid-v13,#trasa .v11-wrap.route-grid-v13{width:88vw!important;max-width:88vw!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
- #trasa .profile-stage{width:88vw!important;max-width:88vw!important;min-width:0!important;margin-left:auto!important;margin-right:auto!important;justify-self:center!important;align-self:center!important}
- #trasa .route-viz-card,#trasa .map-card-v15,#trasa .profile-card-v15{width:88vw!important;max-width:88vw!important;margin-left:auto!important;margin-right:auto!important}
- #fotogalerie-2025 .tdj-gallery-main{width:88vw}
- .tdj-year-slider{aspect-ratio:4/3;border-radius:16px}.tdj-year-arrow{width:40px;height:40px}
+  /* Proven centering correction retained for map + elevation profile */
+  #trasa .profile-stage{width:calc(100% - 28px)!important;max-width:calc(100% - 28px)!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important;box-sizing:border-box!important;transform:none!important}
+  #trasa .route-viz-card,#trasa .map-card-v15,#trasa .profile-card-v15,#trasa #tdj-map-v192,#trasa .tdj-profile-svg{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;transform:none!important;box-sizing:border-box!important}
+  .photo25-slider{aspect-ratio:4/3;border-radius:16px}
+  .photo25-links{grid-template-columns:1fr}
 }
