@@ -1854,3 +1854,59 @@ html { scroll-behavior: smooth; }
  #fotogalerie-2025 .tdj-gallery-hero p{font-size:16px!important;line-height:1.55!important}
  #fotogalerie-2025 .tdj-gallery-content{margin:36px 0 0!important}
 }
+
+/* ===== TDJ Production V1.13 =====
+   Desktop only: Fotogalerie 2025 text block matches Fotogalerie 2026 exactly.
+   Mobile intentionally unchanged. */
+@media (min-width:761px){
+  #fotogalerie-2025 .tdj-gallery-main{
+    width:min(1120px,86vw)!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:82px 0 90px!important;
+  }
+  #fotogalerie-2025 .tdj-gallery-hero{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:10px 0 38px!important;
+    border-bottom:1px solid #cbddeb!important;
+    text-align:left!important;
+  }
+  #fotogalerie-2025 .tdj-gallery-kicker{
+    display:block!important;
+    width:auto!important;
+    margin:0 0 22px!important;
+    text-align:left!important;
+  }
+  #fotogalerie-2025 .tdj-gallery-hero h1{
+    display:block!important;
+    width:auto!important;
+    max-width:860px!important;
+    margin:0 0 22px!important;
+    padding:0!important;
+    font-size:clamp(50px,5.6vw,82px)!important;
+    line-height:.92!important;
+    letter-spacing:-.035em!important;
+    text-align:left!important;
+  }
+  #fotogalerie-2025 .tdj-gallery-hero p{
+    display:block!important;
+    width:auto!important;
+    max-width:700px!important;
+    margin:0!important;
+    padding:0!important;
+    font-size:18px!important;
+    line-height:1.55!important;
+    text-align:left!important;
+  }
+  #fotogalerie-2025 .tdj-gallery-content{
+    width:100%!important;
+    max-width:none!important;
+    margin:36px 0 0!important;
+    padding:0!important;
+    border-top:0!important;
+  }
+}
