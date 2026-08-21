@@ -43,7 +43,7 @@ const TDJ_SETTINGS = {
       { label: "2026 →", url: "#fotogalerie-2026" },
       { label: "2025 →", url: "#fotogalerie-2025" },
       { label: "2024 →", url: "#fotogalerie-2024" },
-      { label: "OSTATNÍ →", url: "#fotogalerie-ostatni" }
+      { label: "FOTOARCHIV →", url: "#fotogalerie-ostatni" }
     ]
   }
 };
