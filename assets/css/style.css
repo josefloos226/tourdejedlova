@@ -1963,3 +1963,14 @@ html { scroll-behavior: smooth; }
   .tdj-prop-cup strong{font-size:15px}
   .tdj-prop-cat-grid{grid-template-columns:1fr;gap:28px}
 }
+
+
+/* ===== TDJ Production V1.15 — Fotogalerie 2024: exact parity with 2026 ===== */
+#fotogalerie-2024 .tdj-gallery-main{width:min(1120px,86vw)!important;max-width:none!important;}
+#fotogalerie-2024 .tdj-gallery-hero{display:block!important;padding:10px 0 38px!important;}
+#fotogalerie-2024 .tdj-gallery-hero h1{font-size:clamp(50px,5.6vw,82px)!important;line-height:.92!important;max-width:860px!important;margin:0 0 22px!important;letter-spacing:-.035em!important;}
+#fotogalerie-2024 .tdj-gallery-hero p{font-size:18px!important;line-height:1.55!important;margin:0!important;}
+#fotogalerie-2024 .tdj-gallery-content{width:100%!important;max-width:none!important;margin:52px 0 0!important;padding:0!important;}
+#fotogalerie-2024 .tdj-2026-slider{display:block!important;width:100%!important;max-width:none!important;margin:0!important;}
+#fotogalerie-2024 .tdj-photo-links{width:100%!important;max-width:none!important;}
+@media(max-width:760px){#fotogalerie-2024 .tdj-gallery-main{width:88vw!important;}#fotogalerie-2024 .tdj-gallery-hero h1{font-size:clamp(42px,12vw,60px)!important;}#fotogalerie-2024 .tdj-gallery-hero p{font-size:16px!important;}}
