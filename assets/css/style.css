@@ -2069,3 +2069,17 @@ html { scroll-behavior: smooth; }
   #fotogalerie-2024 .tdj-gallery-hero h1 .tdj-title-line{white-space:normal!important;}
   #fotogalerie-2024 .tdj-gallery-hero p{font-size:16px!important;}
 }
+
+/* TDJ V1.16.3 – Fotoarchiv */
+#fotogalerie-ostatni .tdj-gallery-main{width:min(1180px,90vw)}
+#fotogalerie-ostatni .tdj-archive-hero{display:block!important;padding:10px 0 52px!important;border-bottom:0!important}
+#fotogalerie-ostatni .tdj-archive-hero h1{font-size:clamp(50px,5.6vw,82px)!important;line-height:.92!important;max-width:1050px!important;margin:0 0 22px!important;letter-spacing:-.035em!important}
+#fotogalerie-ostatni .tdj-archive-hero p{font-size:18px!important;max-width:760px!important}
+#fotogalerie-ostatni .tdj-archive-content{width:100%;max-width:none;padding-top:54px}
+.tdj-archive-intro{max-width:720px;color:#64758c;font-size:17px;line-height:1.6}
+.tdj-archive-years{margin-top:50px;border-top:1px solid #cbddeb}
+.tdj-archive-year{display:grid;grid-template-columns:170px 1fr auto;gap:36px;align-items:center;padding:34px 0;border-bottom:1px solid #dbe6ef}
+.tdj-archive-year-number{font-size:58px;line-height:1;font-weight:950;letter-spacing:-.055em;color:#10233e}
+.tdj-archive-year-info{display:flex;flex-direction:column;gap:5px}.tdj-archive-year-info span,.tdj-archive-callout span{font-size:11px;letter-spacing:.18em;font-weight:900;color:#2476d7}.tdj-archive-year-info strong{font-size:20px}.tdj-archive-year-info small{font-size:14px;color:#718197}
+.tdj-archive-callout{margin-top:72px;padding:38px 42px;border-radius:20px;background:#eef6fc;display:flex;justify-content:space-between;align-items:center;gap:40px}.tdj-archive-callout h3{font-size:25px;line-height:1.1;margin:9px 0 10px}.tdj-archive-callout p{max-width:690px;margin:0;color:#64758c;line-height:1.55}.tdj-archive-callout>a{white-space:nowrap;font-size:13px;font-weight:900;border-bottom:1px solid currentColor;padding-bottom:3px}
+@media(max-width:760px){#fotogalerie-ostatni .tdj-gallery-main{width:88vw}#fotogalerie-ostatni .tdj-archive-hero h1{font-size:clamp(42px,12vw,60px)!important}#fotogalerie-ostatni .tdj-archive-hero p{font-size:16px!important}.tdj-archive-year{grid-template-columns:1fr;gap:13px;padding:30px 0}.tdj-archive-year-number{font-size:50px}.tdj-archive-year .tdj-album-btn{justify-self:start}.tdj-archive-callout{padding:30px 26px;align-items:flex-start;flex-direction:column}}
