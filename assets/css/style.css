@@ -2070,12 +2070,13 @@ html { scroll-behavior: smooth; }
   #fotogalerie-2024 .tdj-gallery-hero p{font-size:16px!important;}
 }
 
-/* TDJ V1.16.3 – photo archive */
-.tdj-photoarchive{width:min(980px,100%)}
-.tdj-archive-year{display:grid;grid-template-columns:150px 1fr auto;gap:34px;align-items:center;padding:30px 0;border-top:1px solid #cbddeb}
+/* TDJ V1.16.4 – photo archive */
+#fotogalerie-ostatni .tdj-photoarchive{width:100%;max-width:none;margin:64px 0 0;padding-top:44px}
+#fotogalerie-ostatni .tdj-photoarchive>p{max-width:900px}
+.tdj-archive-year{display:grid;grid-template-columns:150px minmax(360px,1fr) auto;gap:54px;align-items:center;padding:34px 0;border-top:1px solid #cbddeb}
 .tdj-archive-year:last-of-type{border-bottom:1px solid #cbddeb}
 .tdj-archive-yearnum{font-size:54px;line-height:1;font-weight:900;letter-spacing:-2px;color:#0b213e}
-.tdj-archive-meta{display:flex;flex-direction:column;gap:7px}.tdj-archive-meta strong{font-size:14px;letter-spacing:1.8px;color:#1479e8}.tdj-archive-meta span{font-size:15px;color:#6b7d91}
+.tdj-archive-meta{display:flex;flex-direction:column;gap:7px;min-width:0}.tdj-archive-meta strong{font-size:14px;letter-spacing:1.8px;color:#1479e8;white-space:nowrap}.tdj-archive-meta span{font-size:15px;color:#6b7d91;white-space:nowrap}
 .tdj-archive-year>a,.tdj-archive-callout>a{font-size:12px;font-weight:900;letter-spacing:.5px;color:#0b213e;text-decoration:none;white-space:nowrap}.tdj-archive-year>a:hover,.tdj-archive-callout>a:hover{color:#1479e8}
 .tdj-archive-callout{margin-top:70px;padding:34px 38px;border:1px solid #cbddeb;border-radius:18px;background:#f8fbfe;display:flex;justify-content:space-between;gap:30px;align-items:center}.tdj-archive-callout strong{display:block;margin-top:10px;font-size:22px;color:#0b213e}.tdj-archive-callout p{margin:8px 0 0;max-width:620px;color:#6b7d91}
 @media(max-width:760px){.tdj-archive-year{grid-template-columns:1fr;gap:10px;padding:25px 0}.tdj-archive-yearnum{font-size:46px}.tdj-archive-year>a{margin-top:8px}.tdj-archive-callout{align-items:flex-start;flex-direction:column;padding:28px 24px}.tdj-gallery-hero h1{overflow-wrap:normal;word-break:normal}}
