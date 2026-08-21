@@ -64,6 +64,20 @@
 }
 </script>
 
+
+<!-- Google Analytics 4: consent-first integration (TDJ V1.16.8) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'wait_for_update': 500
+});
+</script>
+
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
 
 
@@ -461,6 +475,40 @@
 <div class="tdj-archive-year"><div class="tdj-archive-yearnum">2020</div><div class="tdj-archive-meta"><strong>LUBOŠ BAKUS</strong><span>Tour de Jedlová · 16. 8. 2020</span></div><a target="_blank" rel="noopener" href="https://www.rajce.idnes.cz/lubosbus/album/tour-de-jedlova-16-8-2020">PROHLÉDNOUT FOTOGALERII →</a></div>
 <div class="tdj-archive-year"><div class="tdj-archive-yearnum">2019</div><div class="tdj-archive-meta"><strong>LUBOŠ BAKUS</strong><span>Tour de Jedlová · 18. 8. 2019</span></div><a target="_blank" rel="noopener" href="https://www.rajce.idnes.cz/lubosbus/album/tour-de-jedlova-18-8-2019">PROHLÉDNOUT FOTOGALERII →</a></div>
 <div class="tdj-archive-callout"><div><div class="tdj-gallery-kicker">POMOZTE NÁM DOPLNIT ARCHIV</div><strong>MÁTE FOTOGRAFIE ZE STARŠÍCH ROČNÍKŮ?</strong><p>Budeme rádi za fotografie nebo odkazy na galerie z minulých ročníků Tour de Jedlová.</p></div><a href="#kontakt">KONTAKTOVAT TDJ →</a></div></section><nav class="tdj-gallery-bottom"><a href="#galerie">← ZPĚT NA FOTOGALERII</a><a href="#">ZPĚT NA TDJ →</a></nav></main></section>
+
+
+<div class="tdj-cookie-banner" id="tdjCookieBanner" role="dialog" aria-live="polite" aria-label="Nastavení analytiky">
+  <div class="tdj-cookie-copy"><strong>Pomůžete nám zlepšovat TDJ?</strong><p>Se souhlasem použijeme Google Analytics k anonymnímu vyhodnocení návštěvnosti webu. Marketingové cookies nepoužíváme.</p></div>
+  <div class="tdj-cookie-actions"><button class="tdj-cookie-btn" id="tdjAnalyticsReject" type="button">ODMÍTNOUT</button><button class="tdj-cookie-btn primary" id="tdjAnalyticsAccept" type="button">POVOLIT ANALYTIKU</button></div>
+</div>
+<button class="tdj-cookie-settings" id="tdjCookieSettings" type="button" aria-label="Změnit nastavení analytiky">Nastavení cookies</button>
+<script>
+(function(){
+  var KEY='tdj_analytics_consent';
+  var banner=document.getElementById('tdjCookieBanner');
+  var settings=document.getElementById('tdjCookieSettings');
+  var loaded=false;
+  function loadGA(){
+    if(loaded) return; loaded=true;
+    gtag('consent','update',{'analytics_storage':'granted'});
+    var js=document.createElement('script'); js.async=true; js.src='https://www.googletagmanager.com/gtag/js?id=G-8ENY2HMGCP'; document.head.appendChild(js);
+    gtag('js',new Date()); gtag('config','G-8ENY2HMGCP',{'anonymize_ip':true});
+  }
+  function show(){banner.classList.add('is-visible');}
+  function hide(){banner.classList.remove('is-visible');}
+  function setConsent(value){
+    localStorage.setItem(KEY,value);
+    if(value==='granted'){loadGA();}
+    else{gtag('consent','update',{'analytics_storage':'denied'});}
+    hide();
+  }
+  document.getElementById('tdjAnalyticsAccept').addEventListener('click',function(){setConsent('granted');});
+  document.getElementById('tdjAnalyticsReject').addEventListener('click',function(){setConsent('denied');});
+  settings.addEventListener('click',show);
+  var saved=localStorage.getItem(KEY);
+  if(saved==='granted') loadGA(); else if(saved!=='denied') show();
+})();
+</script>
 
 <script src="data/settings.js"></script>
 <script src="assets/js/app.js"></script>

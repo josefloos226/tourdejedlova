@@ -16,3 +16,9 @@ TDJ Production V1.11
 TDJ Production V1.14
 ====================
 Upraveny Propozice: startovne a prezentace, nove kategorie, pravidla a bezpecnost, zvyrazneni Poharu CC Varnsdorf. Ostatni casti V1.13 beze zmeny.
+
+V1.16.8
+- Google Analytics 4: G-8ENY2HMGCP
+- Consent-first integration: analytics disabled until explicit approval
+- Analytics consent can be rejected and later changed via "Nastavení cookies"
+- No marketing/ad consent is enabled
