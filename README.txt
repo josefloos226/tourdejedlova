@@ -24,9 +24,11 @@ V1.16.8
 - No marketing/ad consent is enabled
 
 
-V4.0
+V4.1
 - ISABEL napojena na Cloudflare Worker tdj-isabel-api.
 - Dotazy se posilaji pres POST JSON {question: ...}.
 - Odpoved API {answer: ...} se zobrazi v chatu.
 - Pri nedostupnosti API zustava lokalni V3.3 znalostni engine jako fallback.
 - Gemini API klic neni ulozen ve webu; zustava jako Cloudflare Secret.
+
+V4.1: ISABEL posílá Workeru krátkodobou historii dialogu (max. 10 zpráv / cca 5 výměn).
