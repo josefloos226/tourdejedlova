@@ -36,3 +36,17 @@
  .tdj-a-form input{width:0!important;min-width:0!important;flex:1 1 0!important;font-size:16px!important}
  .tdj-a-form button{min-width:44px!important;flex:0 0 44px!important}
 }
+
+/* V3.1 conversational welcome */
+.tdj-a-nudge{position:fixed;right:22px;bottom:92px;z-index:10019;width:min(350px,calc(100vw - 28px));padding:14px 14px 12px;background:#fff;color:#10223a;border:1px solid #dfe7f0;border-radius:18px;box-shadow:0 18px 50px rgba(0,32,70,.24);font-family:Arial,sans-serif;opacity:0;visibility:hidden;transform:translateY(10px) scale(.98);transition:.22s ease}
+.tdj-a-nudge.show{opacity:1;visibility:visible;transform:none}
+.tdj-a-nudge:after{content:"";position:absolute;right:42px;bottom:-8px;width:16px;height:16px;background:#fff;border-right:1px solid #dfe7f0;border-bottom:1px solid #dfe7f0;transform:rotate(45deg)}
+.tdj-a-nudge-text{font-size:13px;line-height:1.42;padding-right:18px}.tdj-a-nudge-text strong{font-size:14px}
+.tdj-a-nudge-close{position:absolute;right:7px;top:5px;border:0;background:transparent;color:#66778c;font-size:20px;cursor:pointer;z-index:2}
+.tdj-a-nudge-actions,.tdj-a-welcome-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}
+.tdj-a-nudge-actions button,.tdj-a-welcome-actions button{border:0;border-radius:11px;padding:9px 8px;background:#075fae;color:#fff;font-weight:800;font-size:10px;cursor:pointer}
+.tdj-a-welcome-actions{align-self:flex-start;width:min(100%,310px);margin:0 0 4px 0}
+#tdj-assistant-launcher{transition:transform .18s ease,box-shadow .18s ease}
+.tdj-a-nudge.show~#tdj-assistant-launcher{animation:tdjNudge 1s ease 1}
+@keyframes tdjNudge{0%,100%{transform:none}35%{transform:translateY(-3px)}60%{transform:translateY(1px)}}
+@media(max-width:600px){.tdj-a-nudge{left:10px;right:10px;bottom:82px;width:auto}.tdj-a-nudge:after{right:42px}.tdj-a-welcome-actions{width:100%}}

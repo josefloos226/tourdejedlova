@@ -37,6 +37,8 @@ const intents=[
  {id:"ebike",score:8,keys:["elektrokol","e bike","ebike"],answer:()=>"Ne. Elektrokola / e-bike nejsou na TDJ povolena. Povolené jsou MTB / horská kola a gravel."},
  {id:"gravel",score:8,keys:["gravel"],answer:()=>"Ano 🙂 Gravel je na TDJ povolený. Povolené jsou také MTB / horská kola. Elektrokola povolená nejsou."},
  {id:"bike",score:5,keys:["jake kolo","jakem kole","jakym kolem","jaky kolo","typ kola","druh kola","povolena kola","na cem muzu jet","na cem mohu jet","cim muzu jet","cim mohu jet","mohu jet","muzu jet","mtb","horske kolo","horskem kole"],answer:()=>"Na TDJ můžeš jet na MTB / horském kole nebo na gravelu. Elektrokola ani ostatní typy kol povolené nejsou. Cyklistická helma je povinná po celou dobu závodu."},
+ {id:"equipment",score:8,keys:["vybaveni","povinna vybava","co musim mit","co potrebuji","co si mam vzit","vystroj"],answer:()=>"Pro účast na TDJ potřebuješ vhodné kolo – povolené je MTB / horské kolo nebo gravel – a cyklistickou helmu, která je povinná po celou dobu závodu. Elektrokola nejsou povolena."},
+ {id:"accident",score:9,keys:["vybour","spadnu","pad","nehoda","zran","nabour","uraz","neco stane"],answer:()=>"Pokud dojde k pádu nebo nehodě, dbej nejdřív na vlastní bezpečnost a bezpečnost ostatních. Pokud můžeš, přesuň se mimo vozovku a kontaktuj organizátory. Při vážném zranění volej 155. Pokud závod ukončíš, je potřeba vrátit měřicí čip."},
  {id:"helmet",score:7,keys:["helma","prilba"],answer:()=>"Ano. Cyklistická helma je povinná po celou dobu závodu."},
  {id:"parking",score:7,keys:["parkov","auto","zapark"],answer:()=>"Parkovat lze u restaurace Lidová zahrada. Alternativou je nechat auto pod Tolštejnem a po závodě se k němu z Jedlové vrátit na kole. Organizovaný návrat zpět na start není zajištěn."},
  {id:"bags",score:7,keys:["batoh","bunda","osobni vec","veci do cile","prevoz vec"],answer:()=>"Organizátor zajišťuje převoz batohů závodníků ze startu na Jedlovou."},
@@ -44,11 +46,12 @@ const intents=[
  {id:"timing",score:7,keys:["meren cas","meri cas","casomira","cip","chip"],answer:()=>"Čas je měřen čipem, který závodník dostane v kanceláři závodu v místě startu. Po závodě je potřeba čip vrátit."},
  {id:"results",score:7,keys:["vysled"],answer:()=>"Po závodě budou výsledky dostupné online na portálu poskytovatele čipové časomíry. Na web TDJ je doplníme nejpozději do jednoho týdne."},
  {id:"route_mark",score:8,keys:["znacen","sipk","navigac","gpx","jak poznam kudy"],answer:()=>"Trasa je značená organizátory směrovými šipkami a značením na silnici. Pro orientaci proto není navigace nutná."},
- {id:"route",score:5,keys:["trasa","kudy","kolik km","delka","prevys","povrch"],answer:()=>"Trasa měří přibližně 10 km, má převýšení kolem 400 m a vede z Varnsdorfu přes Dolní Podluží, Jiřetín pod Jedlovou a Křížovou horu na Jedlovou. Povrch kombinuje asfalt a nezpevněné/štěrkové úseky."},
+ {id:"route_profile",score:8,keys:["profil trate","profil trasy","obtiz","naroc","tezka trat","tezky zavod","nastoup","vyskove metry","stoupani","kopce","kopec"],answer:()=>"Trať má přibližně 10 km a převýšení kolem 400 m+. Profil je převážně stoupavý a nejtěžší část přichází ve druhé třetině závodu při stoupání směrem na Jedlovou. Povrch kombinuje asfalt a nezpevněné/štěrkové úseky."},
+ {id:"route",score:5,keys:["trasa","trat","kudy","kolik km","delka","prevys","povrch"],answer:()=>"Trasa měří přibližně 10 km, má převýšení kolem 400 m a vede z Varnsdorfu přes Dolní Podluží, Jiřetín pod Jedlovou a Křížovou horu na Jedlovou. Povrch kombinuje asfalt a nezpevněné/štěrkové úseky."},
  {id:"start",score:6,keys:["kde je start","odkud se startuje","v kolik start","kdy start","startuje"],answer:()=>"Start je u restaurace Lidová zahrada ve Varnsdorfu v 10:00. Prezentace probíhá od 9:00 do 9:40."},
  {id:"office",score:7,keys:["kancelar","startovni cislo","kde dostanu cislo","kde dostanu cip"],answer:()=>"Kancelář závodu je v místě startu. Závodník zde dostane startovní číslo, měřicí čip a organizační informace."},
  {id:"registration",score:6,keys:["registr","prihlas"],answer:()=>"Přihlásit se lze online nebo na místě. Prezentace na místě probíhá od 9:00 do 9:40. Startovné na místě je 300 Kč a platí se hotově."},
- {id:"fee",score:7,keys:["startovne","kolik stoji","cena zavodu"],answer:()=>"Startovné je při online registraci 150 Kč, při přihlášení na místě 300 Kč. Na místě se platí pouze hotově."},
+ {id:"fee",score:7,keys:["startovne","vstupne","poplatek","kolik stoji","kolik zaplatim","cena zavodu"],answer:()=>"Startovné je při online registraci 150 Kč, při přihlášení na místě 300 Kč. Na místě se platí pouze hotově."},
  {id:"traffic",score:7,keys:["uzavrena trat","uzavren","silnicni provoz","auta","provoz"],answer:()=>"Trať není uzavřená. Závod se jede za běžného silničního provozu a účastníci musí dodržovat pravidla provozu a pokyny pořadatelů a Policie ČR."},
  {id:"technical",score:7,keys:["defekt","pichnu","pichl","technicky problem","rozbije kolo"],answer:()=>"Při defektu nebo technickém problému je nejdůležitější bezpečnost. Jsi stále účastníkem silničního provozu; v případě potřeby kontaktuj organizátory."},
  {id:"weather",score:6,keys:["pocasi","dest","prset"],answer:()=>"Závod se koná za každého počasí."},
@@ -75,7 +78,7 @@ function detect(s){
 function conversational(s){
  if(!s)return "Jasně 🙂 Ptej se.";
  if(has(s,[/^(super|parada|fajn|dobre|ok|okej|jasny|jasne|aha|rozumim)$/]))return "Jasně 🙂 Ptej se dál.";
- if(has(s,["mam jeste otazku","mam jeste dotaz","pak mam jeste otazku","muzu se jeste zeptat","mohu se jeste zeptat","jeste jedna otazka","jeste jeden dotaz"]))return "Jasně 🙂 Ptej se, co tě zajímá.";
+ if(has(s,["mam jeste otazku","mam jeste dotaz","pak mam jeste otazku","jeste bych mel dotaz","jeste bych mela dotaz","jeste bych se chtel zeptat","jeste bych se chtela zeptat","muzu se jeste zeptat","mohu se jeste zeptat","muzu mit dalsi otazku","mohu mit dalsi otazku","jeste jedna otazka","jeste jeden dotaz","mam dalsi otazku","mam dalsi dotaz"]))return "Jasně 🙂 Ptej se, co tě zajímá.";
  if(has(s,["diky","dekuji","dik"]))return "Rádo se stalo 🙂 Kdybys potřeboval něco dalšího kolem TDJ, ptej se.";
  return null;
 }
@@ -129,8 +132,15 @@ function answer(raw){
 
 const say=(t,who="bot")=>{const d=document.createElement("div");d.className="tdj-a-msg "+who;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight};
 function ask(q){say(q,"user");setTimeout(()=>say(answer(q)),60)}
-launcher.onclick=()=>panel.classList.toggle("open");
+const nudge=$("tdj-a-nudge"),nudgeClose=$("tdj-a-nudge-close");
+const hideNudge=()=>{if(nudge)nudge.classList.remove("show")};
+const markNudge=()=>{try{sessionStorage.setItem("tdj-a-nudge-seen","1")}catch(e){}};
+const openPanel=()=>{panel.classList.add("open");hideNudge();markNudge()};
+launcher.onclick=()=>panel.classList.contains("open")?panel.classList.remove("open"):openPanel();
 const close=$("tdj-a-close");if(close)close.onclick=()=>panel.classList.remove("open");
-document.querySelectorAll(".tdj-a-chip").forEach(b=>b.onclick=()=>ask(b.textContent));
-form.onsubmit=e=>{e.preventDefault();const q=input.value.trim();if(q){input.value="";ask(q)}};
+if(nudgeClose)nudgeClose.onclick=e=>{e.stopPropagation();hideNudge();markNudge()};
+if(nudge)nudge.onclick=e=>{if(e.target.closest("button"))return;openPanel()};
+document.querySelectorAll("[data-welcome]").forEach(b=>b.onclick=e=>{e.stopPropagation();openPanel();document.querySelectorAll(".tdj-a-welcome-actions").forEach(x=>x.remove());if(b.dataset.welcome==="race"){say("Chci závodit","user");setTimeout(()=>say("Super 🙂 Můžu ti poradit se startovným, registrací, kategorií, kolem, trasou nebo pravidly závodu."),60)}else{say("Mám dotaz","user");setTimeout(()=>{say("Jasně 🙂 Ptej se, co tě zajímá.");input.focus()},60)}});
+setTimeout(()=>{let seen=false;try{seen=sessionStorage.getItem("tdj-a-nudge-seen")==="1"}catch(e){}if(!seen&&!panel.classList.contains("open")&&nudge){nudge.classList.add("show");try{const AC=window.AudioContext||window.webkitAudioContext;if(AC){const ac=new AC(),o=ac.createOscillator(),g=ac.createGain();o.frequency.value=880;g.gain.setValueAtTime(.0001,ac.currentTime);g.gain.exponentialRampToValueAtTime(.025,ac.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.14);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.15)}}catch(e){}}},2600);
+form.onsubmit=e=>{e.preventDefault();const q=input.value.trim();if(q){input.value="";document.querySelectorAll(".tdj-a-welcome-actions").forEach(x=>x.remove());ask(q)}};
 })();

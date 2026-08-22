@@ -118,7 +118,7 @@ gtag('consent', 'default', {
 
 
 <link rel="stylesheet" href="assets/css/style.css?v=1.16.10"/>
-<link rel="stylesheet" href="assets/css/assistant.css?v=3.0"/>
+<link rel="stylesheet" href="assets/css/assistant.css?v=3.1"/>
 
 <link rel="preload" as="image" href="assets/images/embedded/image-002.jpg" fetchpriority="high">
 </head>
@@ -537,14 +537,21 @@ gtag('consent', 'default', {
 <script src="data/settings.js"></script>
 <script src="assets/js/app.js"></script>
 
-<!-- TDJ ASISTENTKA — V2.2.1 -->
+<!-- TDJ ASISTENTKA — V3.1 -->
 <button id="tdj-assistant-launcher" aria-label="Otevřít TDJ Asistentku"><img src="assets/images/tdj-asistentka.webp" alt=""><span>TDJ ASISTENTKA<small>Ráda ti poradím</small></span></button>
+<div id="tdj-a-nudge" class="tdj-a-nudge" aria-live="polite">
+ <button id="tdj-a-nudge-close" class="tdj-a-nudge-close" aria-label="Zavřít uvítání">×</button>
+ <div class="tdj-a-nudge-text">👋 <strong>Ahoj! Jsem TDJ asistentka.</strong><br>Chystáš se závodit, nebo se chceš na něco zeptat?</div>
+ <div class="tdj-a-nudge-actions"><button data-welcome="race">CHCI ZÁVODIT</button><button data-welcome="question">MÁM DOTAZ</button></div>
+</div>
 <aside id="tdj-assistant" aria-label="TDJ Asistentka">
  <div class="tdj-a-head"><img src="assets/images/tdj-asistentka.webp" alt=""><div><strong>TDJ ASISTENTKA</strong><span>Virtuální průvodkyně Tour de Jedlová</span></div><button class="tdj-a-close" id="tdj-a-close" aria-label="Zavřít">×</button></div>
- <div class="tdj-a-intro"><b>Ahoj! 👋</b><p>Ráda ti poradím s Tour de Jedlová. Vyber téma nebo napiš vlastní dotaz.</p><div class="tdj-a-chips"><button class="tdj-a-chip" data-key="startovne">STARTOVNÉ</button><button class="tdj-a-chip" data-key="registrace">REGISTRACE</button><button class="tdj-a-chip" data-key="trasa">TRASA</button><button class="tdj-a-chip" data-key="kategorie">KATEGORIE</button></div></div>
- <div class="tdj-a-chat" id="tdj-a-chat"><div class="tdj-a-msg bot">Zeptej se mě na cokoliv kolem Tour de Jedlová – třeba na startovné, registraci, trasu, kategorie nebo praktické informace.</div></div>
+ <div class="tdj-a-chat" id="tdj-a-chat">
+   <div class="tdj-a-msg bot">👋 Ahoj! Jsem TDJ asistentka. Chystáš se závodit, nebo se chceš na něco zeptat?</div>
+   <div class="tdj-a-welcome-actions"><button data-welcome="race">CHCI ZÁVODIT</button><button data-welcome="question">MÁM DOTAZ</button></div>
+ </div>
  <form class="tdj-a-form" id="tdj-a-form"><input id="tdj-a-input" autocomplete="off" placeholder="Napiš svůj dotaz…" aria-label="Dotaz"><button type="submit" aria-label="Odeslat">➜</button></form>
 </aside>
-<script src="assets/js/assistant-knowledge-v22.js?v=3.0"></script>
-<script src="assets/js/assistant.js?v=3.0"></script>
+<script src="assets/js/assistant-knowledge-v22.js?v=3.1"></script>
+<script src="assets/js/assistant.js?v=3.1"></script>
 </body></html>
