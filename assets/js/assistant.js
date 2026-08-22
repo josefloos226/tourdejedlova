@@ -32,6 +32,7 @@ function childRules(a){
 const intents=[
  {id:"contact_tom",score:9,keys:["tomas","toma","tom"],need:["kontakt","telefon","cislo","email","mail"],answer:()=>KB.contacts?`Tomáš Hurt: ${KB.contacts.tomas.phone}, ${KB.contacts.tomas.email}.`:"Kontakt na Tomáše je uvedený v sekci Kontakt."},
  {id:"contact_terka",score:9,keys:["tereza","terka","terku"],need:["kontakt","telefon","cislo","email","mail"],answer:()=>KB.contacts?`Tereza Císařová: ${KB.contacts.tereza.phone}, ${KB.contacts.tereza.email}.`:"Kontakt na Terezu je uvedený v sekci Kontakt."},
+ {id:"contact_general",score:8,keys:["kontakt na organizatora","kontakt na organizatory","kontakt organizator","telefon na organizatora","cislo na organizatora","kontakt na poradat"],answer:()=>KB.contacts?`Jasně. Tomáš Hurt: ${KB.contacts.tomas.phone}, ${KB.contacts.tomas.email}. Tereza Císařová: ${KB.contacts.tereza.phone}, ${KB.contacts.tereza.email}.`:"Kontakty na organizátory najdeš v sekci Kontakt."},
  {id:"payment",score:8,keys:["kart","terminal","hotov","cash","zaplat","platba"],answer:()=>"Na startu není platební terminál. Kartou zaplatit nelze; startovné na místě je 300 Kč a platí se pouze v hotovosti."},
  {id:"dnf",score:8,keys:["nedojed","nedokonc","nezvlad","vzdam","vzdat","odstoup","skoncim","nemuzu pokracovat","dal nejedu","to nedam"],answer:()=>"Pokud závod nedokončíš, kontaktuj organizátory a vrať měřicí čip. Při zastavení dbej především na bezpečnost – stále jsi účastníkem silničního provozu."},
  {id:"ebike",score:8,keys:["elektrokol","e bike","ebike"],answer:()=>"Ne. Elektrokola / e-bike nejsou na TDJ povolena. Povolené jsou MTB / horská kola a gravel."},
@@ -50,7 +51,8 @@ const intents=[
  {id:"route",score:5,keys:["trasa","trat","kudy","kolik km","delka","prevys","povrch"],answer:()=>"Trasa měří přibližně 10 km, má převýšení kolem 400 m a vede z Varnsdorfu přes Dolní Podluží, Jiřetín pod Jedlovou a Křížovou horu na Jedlovou. Povrch kombinuje asfalt a nezpevněné/štěrkové úseky."},
  {id:"start",score:6,keys:["kde je start","odkud se startuje","v kolik start","kdy start","startuje"],answer:()=>"Start je u restaurace Lidová zahrada ve Varnsdorfu v 10:00. Prezentace probíhá od 9:00 do 9:40."},
  {id:"office",score:7,keys:["kancelar","startovni cislo","kde dostanu cislo","kde dostanu cip"],answer:()=>"Kancelář závodu je v místě startu. Závodník zde dostane startovní číslo, měřicí čip a organizační informace."},
- {id:"registration",score:6,keys:["registr","prihlas"],answer:()=>"Přihlásit se lze online nebo na místě. Prezentace na místě probíhá od 9:00 do 9:40. Startovné na místě je 300 Kč a platí se hotově."},
+ {id:"registration_status",score:10,keys:["spustena registrace","spustena online registrace","otevrena registrace","registrace otevrena","uz spustena registrace","uz se muzu prihlasit","uz se mohu prihlasit","funguje online registrace","online registrace spustena"],answer:()=>"Online registrace na TDJ 2027 zatím není spuštěná. Jakmile bude otevřená, odkaz najdeš přímo na webu TDJ. Přihlásit se bude možné také v den závodu na místě."},
+ {id:"registration",score:6,keys:["registr","prihlas"],answer:()=>"Online registrace na TDJ 2027 zatím není spuštěná. Po jejím otevření bude odkaz přímo na webu TDJ. Přihlásit se bude možné také v den závodu na místě; prezentace probíhá od 9:00 do 9:40 a startovné na místě je 300 Kč v hotovosti."},
  {id:"fee",score:7,keys:["startovne","vstupne","poplatek","kolik stoji","kolik zaplatim","cena zavodu"],answer:()=>"Startovné je při online registraci 150 Kč, při přihlášení na místě 300 Kč. Na místě se platí pouze hotově."},
  {id:"traffic",score:7,keys:["uzavrena trat","uzavren","silnicni provoz","auta","provoz"],answer:()=>"Trať není uzavřená. Závod se jede za běžného silničního provozu a účastníci musí dodržovat pravidla provozu a pokyny pořadatelů a Policie ČR."},
  {id:"technical",score:7,keys:["defekt","pichnu","pichl","technicky problem","rozbije kolo"],answer:()=>"Při defektu nebo technickém problému je nejdůležitější bezpečnost. Jsi stále účastníkem silničního provozu; v případě potřeby kontaktuj organizátory."},
@@ -78,7 +80,7 @@ function detect(s){
 function conversational(s){
  if(!s)return "Jasně 🙂 Ptej se.";
  if(has(s,[/^(super|parada|fajn|dobre|ok|okej|jasny|jasne|aha|rozumim)$/]))return "Jasně 🙂 Ptej se dál.";
- if(has(s,["mam jeste otazku","mam jeste dotaz","pak mam jeste otazku","jeste bych mel dotaz","jeste bych mela dotaz","jeste bych se chtel zeptat","jeste bych se chtela zeptat","muzu se jeste zeptat","mohu se jeste zeptat","muzu mit dalsi otazku","mohu mit dalsi otazku","jeste jedna otazka","jeste jeden dotaz","mam dalsi otazku","mam dalsi dotaz"]))return "Jasně 🙂 Ptej se, co tě zajímá.";
+ if(has(s,["mam jeste otazku","mam jeste dotaz","pak mam jeste otazku","jeste bych mel dotaz","jeste bych mela dotaz","jeste bych se chtel zeptat","jeste bych se chtela zeptat","muzu se jeste zeptat","mohu se jeste zeptat","muzu mit dalsi otazku","mohu mit dalsi otazku","jeste jedna otazka","jeste jeden dotaz","jeste otazka","dalsi otazka","jeste dotaz","dalsi dotaz","mam dalsi otazku","mam dalsi dotaz","chtel bych se zeptat","chtela bych se zeptat","jeste bych se chtel zeptat","jeste bych se chtela zeptat","muzu mit dalsi otazku","mohu mit dalsi otazku","mam dalsi otazku","mam dalsi dotaz"]))return "Jasně 🙂 Ptej se.";
  if(has(s,["diky","dekuji","dik"]))return "Rádo se stalo 🙂 Kdybys potřeboval něco dalšího kolem TDJ, ptej se.";
  return null;
 }
@@ -87,6 +89,10 @@ function answer(raw){
  const conv=conversational(s);
  if(conv)return conv;
 
+ if(state.pending==="contact"){
+   if(yes(s)){state.pending=null;state.unknown=0;return KB.contacts?`Jasně. Tomáš Hurt: ${KB.contacts.tomas.phone}, ${KB.contacts.tomas.email}. Tereza Císařová: ${KB.contacts.tereza.phone}, ${KB.contacts.tereza.email}.`:"Kontakty na organizátory najdeš v sekci Kontakt."}
+   if(no(s)){state.pending=null;state.unknown=0;return "Dobře 🙂 Ptej se dál, kdybys něco potřeboval."}
+ }
  if(state.pending==="gender"){
    const g=gender(s); if(!g)return "Jde o chlapce/muže, nebo dívku/ženu?";
    state.person.gender=g;state.pending=null;
@@ -118,6 +124,10 @@ function answer(raw){
  if(intent){state.topic=intent.id;state.unknown=0;return intent.answer(s)}
 
  // context-aware short followups
+ if((state.topic==="payment"||state.topic==="registration"||state.topic==="registration_status") && has(s,["online verzi","online moznost","online registrace","pres internet"])){
+   state.topic="registration_status";
+   return "Online registrace na TDJ 2027 zatím není spuštěná. Jakmile bude otevřená, odkaz najdeš přímo na webu TDJ.";
+ }
  if(state.topic==="bike" && has(s,["a gravel","gravel"]))return "Ano 🙂 Gravel je povolený.";
  if(state.topic==="results" && /\b20\d\d\b/.test(s))return "Výsledky předchozích ročníků najdeš v archivu výsledků na webu TDJ.";
  if(state.topic==="photos" && /\b20\d\d\b/.test(s))return "Fotografie z předchozích ročníků najdeš ve fotoarchivu na webu TDJ.";
@@ -126,8 +136,8 @@ function answer(raw){
    return "Ahoj! 👋 Ráda ti poradím s Tour de Jedlová. Ptej se na start, registraci, děti, kategorie, kola, trasu, pravidla nebo praktické věci.";
 
  state.unknown++;
- if(state.unknown===1)return "Tomu zatím úplně nerozumím 🙂 Zkus otázku napsat trochu jinak, nebo vyber jedno z témat nahoře.";
- return "Tuhle informaci nemám ověřenou a nechci si ji vymýšlet. Pokud chceš, poradím ti kontakt na Toma nebo Terku, organizátory TDJ.";
+ state.pending="contact";
+ return "Tomu ještě úplně nerozumím 🙂 Zkus otázku položit trochu jinak, nebo se obrať na Toma či Terku, organizátory TDJ. Chceš na ně kontakt?";
 }
 
 const say=(t,who="bot")=>{const d=document.createElement("div");d.className="tdj-a-msg "+who;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight};
