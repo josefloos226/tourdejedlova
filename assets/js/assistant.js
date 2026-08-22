@@ -1,74 +1,95 @@
 (()=>{
-const launcher=document.getElementById('tdj-assistant-launcher'),panel=document.getElementById('tdj-assistant'),chat=document.getElementById('tdj-a-chat'),form=document.getElementById('tdj-a-form'),input=document.getElementById('tdj-a-input');
-const S={pending:null,person:null,people:[],lastTopic:null,followUp:null,lastQuestion:null};
-const F={online:150,place:300,start:'10:00',presentation:'9:00–9:40',startPlace:'u restaurace Lidová zahrada ve Varnsdorfu',distance:'10 km',climb:'400 m+',timing:'Čas je měřen čipem, který závodník dostane na startu.'};
-const N=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[?!.,]/g,' ').replace(/\s+/g,' ').trim();
-function add(t,w='bot'){let d=document.createElement('div');d.className='tdj-a-msg '+w;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
-function age(s){let m=s.match(/\b(\d{1,2})\s*(let|roku|roky|leta)?\b/);return m?+m[1]:null}
-function gender(s){if(/(dcera|divka|holka|zena|zenska|zenske)/.test(s))return'f';if(/(syn|chlapec|kluk|muz|muzsky|muzske)/.test(s))return'm';return null}
-function category(a,g){const M=[[0,10,'A – chlapci do 10 let'],[11,15,'B – chlapci 11–15 let'],[16,29,'C – muži 16–29 let'],[30,39,'D – muži 30–39 let'],[40,49,'E – muži 40–49 let'],[50,59,'F – muži 50–59 let'],[60,69,'G – muži 60–69 let'],[70,150,'H – muži 70+']],W=[[0,10,'A1 – dívky do 10 let'],[11,15,'B1 – dívky 11–15 let'],[16,29,'C1 – ženy 16–29 let'],[30,39,'D1 – ženy 30–39 let'],[40,49,'E1 – ženy 40–49 let'],[50,59,'F1 – ženy 50–59 let'],[60,150,'G1 – ženy 60+']];return(g==='f'?W:M).find(x=>a>=x[0]&&a<=x[1])?.[2]}
-function childRule(a){return a<15?' Protože je mladší 15 let, musí závod absolvovat v doprovodu zákonného zástupce.':a<18?' Protože je mladší 18 let, potřebuje písemný souhlas zákonného zástupce.':''}
-function store(label,a,g){let p={label,age:a,gender:g};S.person=p;S.people.push(p);return p}
-function finishPerson(p){if(!p.gender){S.pending='gender';return `Věk ${p.age} let mám. Ještě potřebuji vědět, zda jde o chlapce, nebo dívku.`}S.pending=null;return `${p.label==='dcera'?'Dcera':p.label==='syn'?'Syn':'Závodník'} ve věku ${p.age} let spadá do kategorie ${category(p.age,p.gender)}.${childRule(p.age)}`}
-function greeting(raw,s){return /^(ahoj|cau|dobry den|zdar|nazdar)\b/.test(s)}
-function rules(){S.lastTopic='rules';S.followUp='childrenRules';return 'Základní podmínky jsou jednoduché 🙂 Závod se jede za plného silničního provozu a trať není uzavřená. Cyklistická helma je povinná. Každý účastník startuje na vlastní nebezpečí a musí dodržovat pravidla silničního provozu a pokyny pořadatelů a Policie ČR. Závod se koná za každého počasí a zdravotní služba není pořadatelem zajištěna. U dětí platí další podmínky podle věku. Chceš je také vysvětlit?'}
+const $=id=>document.getElementById(id), launcher=$('tdj-assistant-launcher'), panel=$('tdj-assistant'), chat=$('tdj-a-chat'), form=$('tdj-a-form'), input=$('tdj-a-input');
+if(!launcher||!panel||!chat||!form||!input)return;
+const K=window.TDJ_KB.facts;
+const S={pending:null,lastTopic:null,person:null,people:[],offeredContact:false};
+const N=x=>x.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[?!.,:;]/g," ").replace(/\s+/g," ").trim();
+const say=(t,w='bot')=>{let d=document.createElement('div');d.className='tdj-a-msg '+w;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight};
+const age=s=>{let m=s.match(/\b(\d{1,2})\s*(let|roku|roky|leta)?\b/);return m?+m[1]:null};
+const gender=s=>/(dcera|divka|holka|zena|zenska)/.test(s)?'f':/(syn|chlapec|kluk|muz|muzsky)/.test(s)?'m':null;
+const yes=s=>/^(ano|jo|jj|jasne|prosim|urcite|posli|chci)( prosim)?$/.test(s);
+const no=s=>/^(ne|ne dik|ne dekuji|neni treba)$/.test(s);
+function category(a,g){let M=[[0,10,"A – chlapci do 10 let"],[11,15,"B – chlapci 11–15 let"],[16,29,"C – muži 16–29 let"],[30,39,"D – muži 30–39 let"],[40,49,"E – muži 40–49 let"],[50,59,"F – muži 50–59 let"],[60,69,"G – muži 60–69 let"],[70,150,"H – muži 70+"]],W=[[0,10,"A1 – dívky do 10 let"],[11,15,"B1 – dívky 11–15 let"],[16,29,"C1 – ženy 16–29 let"],[30,39,"D1 – ženy 30–39 let"],[40,49,"E1 – ženy 40–49 let"],[50,59,"F1 – ženy 50–59 let"],[60,150,"G1 – ženy 60+"]];return (g==='f'?W:M).find(x=>a>=x[0]&&a<=x[1])?.[2]}
+function childRules(a){let x=[];if(a<15)x.push(K.children.under15);if(a<18)x.push(K.children.under18);return x.join(" ")}
+function fallback(){S.pending='contactOffer';S.offeredContact=true;return "Tuhle informaci zatím nemám ověřenou a nechci si ji vymýšlet 🙂 Tom nebo Terka, organizátoři TDJ, ti s tím poradí. Chceš na ně kontakt?"}
 function respond(raw){
- let s=N(raw),a=age(s),g=gender(s),hello=greeting(raw,s);
- // pending dialog has priority over generic matching
- if(S.pending==='gender'){
-   if(g){S.person.gender=g;if(S.person.label==='dite')S.person.label=g==='f'?'dcera':'syn';return finishPerson(S.person)}
-   return 'Ještě potřebuji vědět, zda jde o chlapce/muže, nebo dívku/ženu.';
+ let s=N(raw),a=age(s),g=gender(s),hello=/\b(ahoj|cau|dobry den|nazdar|zdar)\b/.test(s);
+ // pending dialog
+ if(S.pending==='contactOffer'){if(yes(s)){S.pending=null;return "Kontakty na Toma a Terku najdeš přímo na webu TDJ v sekci Kontakt. Pokud chceš, můžeš se na ně obrátit s dotazem, který tu nemám ověřený."} if(no(s)){S.pending=null;return "Jasně 🙂 Ptej se dál na cokoliv kolem TDJ."}}
+ if(S.pending==='gender'){if(g){S.person.gender=g;S.pending=null;return `Díky 🙂 Ve věku ${S.person.age} let jde o kategorii ${category(S.person.age,g)}. ${childRules(S.person.age)}`};return "Ještě potřebuji vědět, zda jde o chlapce/muže, nebo dívku/ženu."}
+ if(S.pending==='age'){if(a!==null){S.person.age=a;if(!S.person.gender){S.pending='gender';return `Věk ${a} let mám. Jde o chlapce, nebo dívku?`}S.pending=null;return `Ve věku ${a} let jde o kategorii ${category(a,S.person.gender)}. ${childRules(a)}`};return "Stačí mi napsat věk, například „10 let“."}
+ // extract multi-intent child
+ if(/(dite|ditetem|dcera|syn|holka|kluk)/.test(s)){
+   let label=/dcera|holka/.test(s)?'dcera':/syn|kluk/.test(s)?'syn':'dítě', pg=g;
+   if(label==='dcera')pg='f'; if(label==='syn')pg='m';
+   if(a!==null){S.person={label,age:a,gender:pg};S.people.push(S.person);
+      let parts=[hello?"Ahoj 🙂":""];
+      if(/(prihlas|zavod|jet|ucast)/.test(s))parts.push("Ano, dítě se může závodu zúčastnit.");
+      if(pg)parts.push(`Ve věku ${a} let jde o kategorii ${category(a,pg)}.`); else {S.pending='gender';parts.push("Ještě potřebuji vědět, zda jde o chlapce, nebo dívku, abych určila kategorii.")}
+      parts.push(childRules(a));
+      if(/gravel/.test(s))parts.push("Gravel je na TDJ povolený.");
+      if(/(elektrokol|e ?bike|ebike)/.test(s))parts.push("Elektrokolo / e-bike na TDJ povolené není.");
+      if(/prihlas|registr/.test(s))parts.push("Online registrace pro další ročník zatím není spuštěná.");
+      return parts.filter(Boolean).join(" ");
+   }
+   if(/(prihlas|zavod|jet|ucast|kategori)/.test(s)){S.person={label,age:null,gender:pg};S.pending='age';return (hello?"Ahoj 🙂 ":"")+"Ano, dítě závodit může. Kolik je mu/jí let?"}
  }
- if(S.pending==='age'){
-   if(a!==null){S.person.age=a;return finishPerson(S.person)}
-   return 'Stačí mi napsat věk, například „10 let“.';
- }
- // short contextual replies
- if(/^(ano|jo|jasne|urcite)$/.test(s)&&S.followUp==='childrenRules'){S.followUp=null;return 'U dětí mladších 18 let je potřeba písemný souhlas zákonného zástupce. Děti mladší 15 let mohou závod absolvovat pouze v doprovodu zákonného zástupce.'}
- if(/^(ne|ne diky|ne dekuji)$/.test(s)&&S.followUp){S.followUp=null;return 'Dobře 🙂 Ptej se dál na cokoli kolem TDJ.'}
- if(/(uz jsem se te zeptal|uz jsem se ptal|vzdyt jsem se ptal)/.test(s)){return 'Máš pravdu 🙂 Předchozí dotaz jsem nezpracovala správně. Napiš ho prosím ještě jednou a zkusím ho vyhodnotit celý, ne jen první slovo.'}
- // Multi-intent: child + participation/registration, even if sentence starts with greeting
- if(/(dite|ditetem|sve dite)/.test(s)&&/(zavod|jet|prihlas|registr|ucast|mozne)/.test(s)){
-   let p=store('dite',a,g),prefix=hello?'Ahoj 🙂 ':'';
-   if(a===null){S.pending='age';return prefix+'Ano, dítě se závodu může zúčastnit. Kolik je mu let?'}
-   if(!g){S.pending='gender';let reg=/(prihlas|registr)/.test(s)?' Online registrace pro ročník 2027 zatím není spuštěná.':'';return prefix+`Ano, dítě ve věku ${a} let se závodu může zúčastnit.${childRule(a)} Ještě mi řekni, zda jde o chlapce, nebo dívku, abych určila správnou kategorii.`+reg}
-   let reg=/(prihlas|registr)/.test(s)?' Online registrace pro ročník 2027 zatím není spuštěná.':'';return prefix+`Ano 🙂 ${finishPerson(p)}`+reg;
- }
- if(/(dcera|s dcerou|dceri)/.test(s)){let p=store('dcera',a,'f');if(a===null){S.pending='age';return 'Ano 🙂 Kolik je dceři let?'}return finishPerson(p)}
- if(/(syn|se synem|synovi)/.test(s)){let p=store('syn',a,'m');if(a===null){S.pending='age';return 'Ano 🙂 Kolik je synovi let?'}return finishPerson(p)}
- // semantic topic groups
- if(/(podmink|pravidl|co musim splnit|co potrebuji k ucasti|pozadavk.*zavod|jak.*ucast)/.test(s))return rules();
- if(/(mer.*cas|cas.*mer|cip|casomir|vlastni.*cip|dostanu.*cip)/.test(s)){S.lastTopic='timing';return F.timing}
- if(/(kde.*cip|cip.*kde)/.test(s)&&S.lastTopic==='timing')return 'Čip dostane závodník na startu.';
- if(/kategori/.test(s)){let p=store('závodník',a,g);if(a===null){S.pending='age';return 'Ráda kategorii určím. Kolik je závodníkovi let?'}return finishPerson(p)}
- if(a!==null&&/^\d{1,2}(\s*let)?$/.test(s)){let p=store('závodník',a,null);return finishPerson(p)}
- if(/(kolik.*zaplat|kolik.*stoji|za nas|za oba|dohromady)/.test(s)){let n=Math.max(1,S.people.length||1),on=!/miste/.test(s),each=on?F.online:F.place;S.lastTopic='price';return `${on?'Při online registraci':'Při přihlášení na místě'} je startovné ${each} Kč za osobu${n>1?`, tedy pro ${n} závodníky celkem ${each*n} Kč`:''}.`}
- if(/^(a )?(na miste|miste)$/.test(s)&&S.lastTopic==='price'){let n=Math.max(1,S.people.length||1);return `Na místě je startovné ${F.place} Kč za osobu${n>1?`, tedy pro ${n} závodníky celkem ${F.place*n} Kč`:''}.`}
- if(/(startovn|cena)/.test(s)){S.lastTopic='price';return `Online startovné je ${F.online} Kč. Při přihlášení na místě je ${F.place} Kč.`}
- if(/(registr|prihlas)/.test(s))return `Online registrace pro ročník 2027 zatím není spuštěná. Prezentace na místě probíhá ${F.presentation} ${F.startPlace}.`;
- if(/(kdy.*start|v kolik|cas.*start)/.test(s))return `Hlavní závod startuje v ${F.start}. Prezentace je ${F.presentation}.`;
- if(/(kde.*start|odkud.*start)/.test(s))return `Start je ${F.startPlace}. Cíl je u rozhledny Jedlová.`;
- if(/(tras|kilometr|dlouh|prevys)/.test(s))return `Hlavní trasa má ${F.distance} a převýšení přibližně ${F.climb}. Vede z Varnsdorfu přes Dolní Podluží, Jiřetín pod Jedlovou a Křížovou horu na Jedlovou.`;
- if(/(elektrokol|e bike|ebike|e-bike|elektrick.*kol)/.test(s))return 'Elektrokola (e-bike) nejsou v závodě TDJ povolena.';
- if(/(gravel)/.test(s))return 'Ano 🙂 Gravel je v závodě TDJ povolen.';
- if(/(mtb|horske.*kolo|horskem.*kole|bike)/.test(s))return 'Ano 🙂 Horské kolo (MTB) je v závodě TDJ povoleno.';
- if(/(jake.*kolo|jaky.*typ.*kola|druh.*kola|kolo.*povol|na cem.*jet)/.test(s))return 'V závodě TDJ jsou povolena horská kola (MTB) a gravel. Elektrokola (e-bike) povolena nejsou.';
- if(/(helma|prilba)/.test(s))return 'Cyklistická helma je povinná po celou dobu závodu.';
- if(/(uzavren|auta|provoz|silnice|policie)/.test(s))return 'Trať není uzavřená. Závod se jede za plného silničního provozu a účastníci musí dodržovat pravidla silničního provozu a pokyny pořadatelů a Policie ČR.';
- if(/(dest|prset|pocasi)/.test(s))return 'Závod se koná za každého počasí.';
- if(/(zdravot|sanit|zachran)/.test(s))return 'Zdravotní služba není pořadatelem zajištěna.';
- if(/(vysled)/.test(s))return 'Na webu najdeš výsledky 2026 a archiv výsledků 2025 a 2024.';
- if(/(fot|galeri)/.test(s))return 'Na webu jsou fotogalerie 2026, 2025, 2024 a fotoarchiv 2023–2019.';
- if(/(termin|datum|kdy.*zavod)/.test(s))return 'Ročník 2027 je plánovaný na srpen. Přesný termín zatím není zveřejněný.';
- if(/(deti|dite)/.test(s))return 'Děti závodit mohou. Osoby mladší 18 let potřebují písemný souhlas zákonného zástupce a děti mladší 15 let musí jet v doprovodu zákonného zástupce.';
- if(/(co umis|s cim.*porad|co.*vis)/.test(s))return 'Poradím se startovným, registrací, startem, trasou, kategoriemi, podmínkami závodu, dětmi, kolem a vybavením, měřením času, výsledky a fotkami. Ptej se klidně celou větou.';
- if(/(dekuji|diky|dik|super|parada)/.test(s))return 'Rádo se stalo 🙂 Ptej se dál, klidně úplně normálně.';
- if(/(nashle|mej se|zatim)/.test(s))return 'Měj se hezky a třeba na startu TDJ! 🚴';
- // Greeting only if no actual topic was found
- if(hello)return 'Ahoj! 👋 Ráda ti poradím s Tour de Jedlová. Chystáš se závodit, nebo hledáš konkrétní informaci?';
- return 'Rozumím, že se ptáš na TDJ, ale tuhle konkrétní informaci zatím v ověřených podkladech nemám. Zkus otázku trochu upřesnit a já se pokusím navázat.';
+ // bike
+ if(/(elektrokol|e ?bike|ebike|elektro kolo)/.test(s)){S.lastTopic='bike';return "Ne. Elektrokola / e-bike nejsou na TDJ povolena. Povolené jsou MTB (horská kola) a gravel."}
+ if(/gravel/.test(s)){S.lastTopic='bike';return "Ano 🙂 Gravel je na TDJ povolený. Povolené jsou také MTB / horská kola. Elektrokola povolená nejsou."}
+ if(/\bmtb\b|horsk.*kol|bike|jake.*kolo|druh.*kola|na cem.*jet/.test(s)){S.lastTopic='bike';return "Na TDJ jsou povolená MTB / horská kola a gravel. Elektrokola ani ostatní typy kol povolené nejsou. Cyklistická helma je povinná."}
+ if(/helm|prilb/.test(s))return K.bike.helmet;
+ // registration/fees
+ if(/startovn|kolik.*zaplat|kolik.*stoji|cena/.test(s)){let n=(s.match(/\b(\d+)\s*(lidi|osob|zavodnik)/)||[])[1];n=n?+n:1;let onsite=/miste/.test(s),v=onsite?K.fees.onsite:K.fees.online;return `${onsite?"Při přihlášení na místě":"Při online registraci"} je startovné ${v} Kč za závodníka${n>1?`, tedy pro ${n} závodníky ${v*n} Kč`:""}. Doprovázející rodič dítěte mladšího 15 let se registrovat nemusí a jako doprovod startovné neplatí.`}
+ if(/registr|prihlas/.test(s))return `Přihlásit se lze online nebo na místě. Na místě probíhá prezentace ${K.start.presentation} v kanceláři závodu ${K.start.place}.`;
+ // category
+ if(/kategori|kam patrim/.test(s)){S.person={age:a,gender:g,label:'závodník'};if(a===null){S.pending='age';return "Ráda kategorii určím. Kolik je závodníkovi let?"}if(!g){S.pending='gender';return `Věk ${a} let mám. Jde o muže/chlapce, nebo ženu/dívku?`}return `Kategorie je ${category(a,g)}.`}
+ // start/logistics
+ if(/(v kolik|kdy).*start|cas.*start/.test(s))return `Hlavní závod startuje v ${K.start.time}. Prezentace probíhá ${K.start.presentation}.`;
+ if(/kde.*start|odkud.*jede|misto.*start/.test(s))return `Start je ${K.start.place}.`;
+ if(/kancelar|startovni cislo|cislo.*cip|kde.*cip/.test(s))return K.logistics.office;
+ if(/wc|toalet|zachod/.test(s))return K.logistics.toilet;
+ if(/batoh|bundu|veci.*cil|prevoz.*veci/.test(s))return K.logistics.bags;
+ if(/parkov|auto/.test(s))return K.logistics.parking+" "+K.logistics.return;
+ if(/jak.*zpet|navrat|odvoz/.test(s))return K.logistics.return+" "+K.logistics.parking;
+ // route
+ if(/znacen|sipk|navigac|gpx|jak.*poznam.*kudy/.test(s))return `Trasa je značená ${K.route.marking}. Pro orientaci proto není navigace nutná.`;
+ if(/povrch|asfalt|sterk|nezpev/.test(s))return `Trať tvoří ${K.route.surface}.`;
+ if(/prevys|nastoup/.test(s))return `Převýšení závodu je ${K.route.climb}.`;
+ if(/kolik.*km|delk|dlouh/.test(s))return `Trasa měří ${K.route.distance} a má převýšení ${K.route.climb}.`;
+ if(/tras|kudy|kam.*jede/.test(s))return `Trasa vede ${K.route.way}. Měří ${K.route.distance} a cíl je ${K.route.finish}.`;
+ if(/cil|jedlov/.test(s)&&!/(divak|fand)/.test(s))return `Cíl závodu je ${K.route.finish}, přibližně ${K.route.finish_altitude}.`;
+ if(/tez|naroc|zvlad/.test(s))return `TDJ má ${K.route.distance} a převýšení ${K.route.climb}. Je krátký, ale převýšením intenzivní. Trať tvoří ${K.route.surface}.`;
+ // timing/results/finish
+ if(/mer.*cas|casomir|cip/.test(s)){S.lastTopic='timing';return K.timing.method+" "+K.timing.return}
+ if(/vysled/.test(s)){S.lastTopic='results';return K.results.immediate+" "+K.results.website}
+ if(/vyhlas|stupn|prvni tri|1.*3/.test(s))return K.finish.ceremony+" "+K.finish.awards;
+ if(/obcerst/.test(s))return K.finish.refreshment;
+ if(/dojel.*co|po dojezdu|co.*cil/.test(s))return `Gratuluji k dojetí! 🚴 ${K.timing.return} ${K.finish.refreshment} ${K.finish.ceremony} ${K.finish.awards}`;
+ if(/tombol/.test(s))return K.finish.raffle;
+ // safety
+ if(/defekt|pich|pichnu|rozbije.*kolo|technick.*problem/.test(s))return K.safety.technical;
+ if(/vzdam|nedojed|odstoup/.test(s))return K.safety.dnf;
+ if(/provoz|uzavren|auta|silnic/.test(s))return K.safety.traffic;
+ if(/pocasi|dest|prset/.test(s))return K.safety.weather;
+ if(/podmink|pravidl|co.*musim.*splnit/.test(s)){S.lastTopic='rules';return `${K.bike.helmet} ${K.safety.traffic} ${K.safety.weather} U nezletilých platí další pravidla podle věku. Chceš je vysvětlit?`}
+ if(S.lastTopic==='rules'&&yes(s)){S.lastTopic=null;return K.children.under15+" "+K.children.under18+" "+K.children.escort}
+ // spectators
+ if(/divak|fand|rodina.*div|kde.*fand/.test(s))return K.spectators.welcome+" "+K.spectators.best;
+ // photos/history/help
+ if(/fot|galeri/.test(s)){S.lastTopic='photos';return "Fotografie z jednotlivých ročníků najdeš na webu TDJ v sekci Fotogalerie a ve fotoarchivu."}
+ if(/histor/.test(s))return "Historii Tour de Jedlová najdeš na webu v sekci Historie. TDJ má vlastní příběh a postupně se rozvíjí jako sportovní i komunitní akce.";
+ if(/pomah|charit|sbirk/.test(s))return "TDJ není jen cyklistický závod. Součástí akce je také pomoc konkrétním lidem a rodinám prostřednictvím komunity kolem Tour de Jedlová. Konkrétní příběhy najdeš v sekci TDJ Pomáhá.";
+ if(/cc varnsdorf|pohar/.test(s))return "Tour de Jedlová je zařazena do poháru CC Varnsdorf.";
+ if(/kontakt|tom|terk|organizator/.test(s))return "Kontakty na organizátory Toma a Terku najdeš přímo na webu TDJ v sekci Kontakt.";
+ // pure greeting only after intents
+ if(hello)return "Ahoj! 👋 Ráda ti poradím s Tour de Jedlová. Můžeš se ptát na registraci, děti, kategorie, kola, trasu, start, pravidla, výsledky nebo praktické věci kolem závodu.";
+ if(/dekuji|diky|dik/.test(s))return "Rádo se stalo 🙂 Kdybys potřeboval něco dalšího kolem TDJ, ptej se.";
+ return fallback();
 }
-function ask(q){add(q,'user');S.lastQuestion=q;setTimeout(()=>add(respond(q)),80)}
-launcher.onclick=()=>panel.classList.toggle('open');document.getElementById('tdj-a-close').onclick=()=>panel.classList.remove('open');
-const quick={startovne:'Kolik stojí startovné?',registrace:'Jak funguje registrace?',trasa:'Jaká je trasa?',kategorie:'Potřebuji určit kategorii.'};document.querySelectorAll('.tdj-a-chip').forEach(b=>b.onclick=()=>ask(quick[b.dataset.key]||b.textContent));form.onsubmit=e=>{e.preventDefault();let q=input.value.trim();if(q){input.value='';ask(q)}};
+function ask(q){say(q,'user');setTimeout(()=>say(respond(q)),80)}
+launcher.onclick=()=>panel.classList.toggle('open');
+let close=$('tdj-a-close');if(close)close.onclick=()=>panel.classList.remove('open');
+document.querySelectorAll('.tdj-a-chip').forEach(b=>b.onclick=()=>ask(b.textContent));
+form.onsubmit=e=>{e.preventDefault();let q=input.value.trim();if(q){input.value='';ask(q)}};
 })();
