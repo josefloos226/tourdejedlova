@@ -3,8 +3,9 @@
 <html lang="cs">
 <head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link rel="icon" type="image/svg+xml" href="assets/images/tdj-favicon.svg?v=1164">
-<link rel="shortcut icon" href="assets/images/tdj-favicon.svg?v=1164">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/svg+xml" href="/assets/images/tdj-favicon.svg">
+<link rel="shortcut icon" href="/favicon-48x48.png">
 <title>Tour de Jedlová | Tradiční MTB závod Varnsdorf – Jedlová</title>
 <meta name="description" content="Oficiální web Tour de Jedlová (TDJ) – tradičního MTB závodu z Varnsdorfu na vrchol Jedlové v Lužických horách. Trasa, registrace, propozice, výsledky, historie a fotogalerie.">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -65,7 +66,7 @@
 </script>
 
 
-<!-- Google Analytics 4: consent-first integration (TDJ V1.16.8) -->
+<!-- Google Analytics 4: consent-first integration -->
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -481,12 +482,10 @@ gtag('consent', 'default', {
   <div class="tdj-cookie-copy"><strong>Pomůžete nám zlepšovat TDJ?</strong><p>Se souhlasem použijeme Google Analytics k anonymnímu vyhodnocení návštěvnosti webu. Marketingové cookies nepoužíváme.</p></div>
   <div class="tdj-cookie-actions"><button class="tdj-cookie-btn" id="tdjAnalyticsReject" type="button">ODMÍTNOUT</button><button class="tdj-cookie-btn primary" id="tdjAnalyticsAccept" type="button">POVOLIT ANALYTIKU</button></div>
 </div>
-<button class="tdj-cookie-settings" id="tdjCookieSettings" type="button" aria-label="Změnit nastavení analytiky">Nastavení cookies</button>
 <script>
 (function(){
   var KEY='tdj_analytics_consent';
   var banner=document.getElementById('tdjCookieBanner');
-  var settings=document.getElementById('tdjCookieSettings');
   var loaded=false;
   function loadGA(){
     if(loaded) return; loaded=true;
@@ -504,7 +503,6 @@ gtag('consent', 'default', {
   }
   document.getElementById('tdjAnalyticsAccept').addEventListener('click',function(){setConsent('granted');});
   document.getElementById('tdjAnalyticsReject').addEventListener('click',function(){setConsent('denied');});
-  settings.addEventListener('click',show);
   var saved=localStorage.getItem(KEY);
   if(saved==='granted') loadGA(); else if(saved!=='denied') show();
 })();

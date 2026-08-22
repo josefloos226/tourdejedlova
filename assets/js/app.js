@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initGallery('fotogalerie-2024');
 })();
 
-/* TDJ Production V1.8 — mobile navigation */
+
 (function(){
  const nav=document.getElementById('nav'), toggle=document.getElementById('mobileMenuToggle');
  const menu=nav?nav.querySelector('.menu'):null; if(!nav||!toggle||!menu)return;
