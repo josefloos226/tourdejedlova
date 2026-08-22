@@ -50,3 +50,7 @@
 .tdj-a-nudge.show~#tdj-assistant-launcher{animation:tdjNudge 1s ease 1}
 @keyframes tdjNudge{0%,100%{transform:none}35%{transform:translateY(-3px)}60%{transform:translateY(1px)}}
 @media(max-width:600px){.tdj-a-nudge{left:10px;right:10px;bottom:82px;width:auto}.tdj-a-nudge:after{right:42px}.tdj-a-welcome-actions{width:100%}}
+
+/* V3.2.1 Isabel */
+@keyframes isabelHelloPulse{0%,100%{transform:translateY(0) scale(1)}35%{transform:translateY(-3px) scale(1.015)}70%{transform:translateY(0) scale(1)}}
+.tdj-a-welcome.show{animation:isabelHelloPulse .7s ease 1}
