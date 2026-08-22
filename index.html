@@ -117,7 +117,7 @@ gtag('consent', 'default', {
 
 
 
-<link rel="stylesheet" href="assets/css/style.css"/>
+<link rel="stylesheet" href="assets/css/style.css?v=1.16.10"/>
 
 <link rel="preload" as="image" href="assets/images/embedded/image-002.jpg" fetchpriority="high">
 </head>
@@ -485,26 +485,51 @@ gtag('consent', 'default', {
 <script>
 (function(){
   var KEY='tdj_analytics_consent';
-  var banner=document.getElementById('tdjCookieBanner');
   var loaded=false;
+
   function loadGA(){
-    if(loaded) return; loaded=true;
+    if(loaded) return;
+    loaded=true;
     gtag('consent','update',{'analytics_storage':'granted'});
-    var js=document.createElement('script'); js.async=true; js.src='https://www.googletagmanager.com/gtag/js?id=G-8ENY2HMGCP'; document.head.appendChild(js);
-    gtag('js',new Date()); gtag('config','G-8ENY2HMGCP',{'anonymize_ip':true});
+    var js=document.createElement('script');
+    js.async=true;
+    js.src='https://www.googletagmanager.com/gtag/js?id=G-8ENY2HMGCP';
+    document.head.appendChild(js);
+    gtag('js',new Date());
+    gtag('config','G-8ENY2HMGCP',{'anonymize_ip':true});
   }
-  function show(){banner.classList.add('is-visible');}
-  function hide(){banner.classList.remove('is-visible');}
-  function setConsent(value){
-    localStorage.setItem(KEY,value);
-    if(value==='granted'){loadGA();}
-    else{gtag('consent','update',{'analytics_storage':'denied'});}
-    hide();
+
+  function initConsent(){
+    var banner=document.getElementById('tdjCookieBanner');
+    var accept=document.getElementById('tdjAnalyticsAccept');
+    var reject=document.getElementById('tdjAnalyticsReject');
+    if(!banner || !accept || !reject) return;
+
+    function hide(){ banner.classList.remove('is-visible'); }
+    function save(value){
+      try { localStorage.setItem(KEY,value); } catch(e) {}
+      if(value==='granted') loadGA();
+      else gtag('consent','update',{'analytics_storage':'denied'});
+      hide();
+    }
+
+    accept.addEventListener('click',function(){ save('granted'); });
+    reject.addEventListener('click',function(){ save('denied'); });
+
+    var saved=null;
+    try { saved=localStorage.getItem(KEY); } catch(e) {}
+    if(saved==='granted'){
+      hide();
+      loadGA();
+    } else if(saved==='denied'){
+      hide();
+    } else {
+      banner.classList.add('is-visible');
+    }
   }
-  document.getElementById('tdjAnalyticsAccept').addEventListener('click',function(){setConsent('granted');});
-  document.getElementById('tdjAnalyticsReject').addEventListener('click',function(){setConsent('denied');});
-  var saved=localStorage.getItem(KEY);
-  if(saved==='granted') loadGA(); else if(saved!=='denied') show();
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initConsent);
+  else initConsent();
 })();
 </script>
 

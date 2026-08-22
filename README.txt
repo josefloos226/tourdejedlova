@@ -20,5 +20,5 @@ Upraveny Propozice: startovne a prezentace, nove kategorie, pravidla a bezpecnos
 V1.16.8
 - Google Analytics 4: G-8ENY2HMGCP
 - Consent-first integration: analytics disabled until explicit approval
-- Analytics consent can be rejected and later changed via "Nastavení cookies"
+- Analytics consent is shown on first visit only; after accept/reject the banner disappears and no floating cookie settings button remains
 - No marketing/ad consent is enabled
