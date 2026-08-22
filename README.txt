@@ -22,3 +22,11 @@ V1.16.8
 - Consent-first integration: analytics disabled until explicit approval
 - Analytics consent is shown on first visit only; after accept/reject the banner disappears and no floating cookie settings button remains
 - No marketing/ad consent is enabled
+
+
+V4.0
+- ISABEL napojena na Cloudflare Worker tdj-isabel-api.
+- Dotazy se posilaji pres POST JSON {question: ...}.
+- Odpoved API {answer: ...} se zobrazi v chatu.
+- Pri nedostupnosti API zustava lokalni V3.3 znalostni engine jako fallback.
+- Gemini API klic neni ulozen ve webu; zustava jako Cloudflare Secret.
