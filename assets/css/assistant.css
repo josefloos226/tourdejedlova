@@ -8,3 +8,5 @@
 .tdj-a-chat{flex:1;overflow:auto;padding:10px 15px;background:#f5f8fb;display:flex;flex-direction:column;gap:9px}.tdj-a-msg{max-width:84%;padding:10px 12px;border-radius:14px;font-size:13px;line-height:1.4}.tdj-a-msg.bot{align-self:flex-start;background:#fff;border:1px solid #e1e8f0}.tdj-a-msg.user{align-self:flex-end;background:#dcecff;color:#10223a}.tdj-a-note{font-size:10px;color:#7b8998;text-align:center;padding:3px 14px 0}
 .tdj-a-form{display:flex;gap:7px;padding:10px 12px 12px;background:#fff}.tdj-a-form input{flex:1;min-width:0;border:1px solid #d4dde8;border-radius:12px;padding:11px 12px;font-size:13px;outline:none}.tdj-a-form button{width:42px;border:0;border-radius:12px;background:#075fae;color:#fff;font-size:19px;cursor:pointer}
 @media(max-width:600px){#tdj-assistant-launcher{right:12px;bottom:12px}#tdj-assistant{right:8px;bottom:78px;width:calc(100vw - 16px);height:min(650px,calc(100vh - 92px));border-radius:18px}.tdj-a-head{padding-top:12px}}
+
+.tdj-a-note{display:none!important;}

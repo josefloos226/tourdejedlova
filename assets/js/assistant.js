@@ -31,11 +31,11 @@ function respond(raw){
 
  // pending conversational questions
  if(S.pending==='age'){
-   if(a!==null){let p=rememberPerson(S.pendingLabel||"závodník",a,S.pendingGender||g||'m');S.pending=null;let c=category(a,p.gender);return `Ve věku ${a} let spadá ${p.gender==='f'?'do':'do'} kategorie ${c}.${childRule(a)}`}
+   if(a!==null){let p=rememberPerson(S.pendingLabel||'závodník',a,S.pendingGender||g||null);if(!p.gender){S.pending='gender';return `Věk ${a} let mám. Ještě potřebuji vědět, zda jde o chlapce, nebo dívku.`;}S.pending=null;return `Ve věku ${a} let spadá do kategorie ${category(a,p.gender)}.${childRule(a)}`}
    return "Stačí mi napsat věk, například „13 let“.";
  }
  if(S.pending==='gender'){
-   if(g){S.pending=null;let p=S.lastPerson;if(p){p.gender=g;return `Díky. Pro věk ${p.age} let je to kategorie ${category(p.age,g)}.${childRule(p.age)}`}}
+   if(g){S.pending=null;let p=S.lastPerson;if(p){p.gender=g;p.label=(g==='f'&&p.label==='dite')?'dcera':(g==='m'&&p.label==='dite')?'syn':p.label;return `Díky 🙂 Pro věk ${p.age} let je to kategorie ${category(p.age,g)}.${childRule(p.age)}`}}
    return "Ještě potřebuji vědět, zda jde o chlapce/muže, nebo dívku/ženu.";
  }
 
@@ -45,6 +45,15 @@ function respond(raw){
  if(/(nashle|mej se|zatim|cau$)/.test(s)) return "Měj se hezky a třeba na startu TDJ! 🚴";
  if(/(co umis|s cim.*porad|co.*vis)/.test(s)) return "Poradím se startovným, registrací, startem, trasou, kategoriemi, pravidly, dětmi, výsledky a fotkami. A klidně se ptej normálně, nemusíš používat přesná hesla.";
 
+ // multi-intent child participation/registration
+ if(/(dite|ditetem|sve dite)/.test(s) && /(zavod|jet|prihlas|registr|ucast)/.test(s)){
+   let p=rememberPerson('dite',a,g);
+   let intro='Jasně 🙂 Závodit můžete oba. ';
+   if(a===null){S.pending='age';S.pendingLabel='dite';S.pendingGender=g;return intro+'Kolik je dítěti let?';}
+   if(!g){S.pending='gender';return intro+`Dítěti je ${a} let. Ještě potřebuji vědět, zda jde o chlapce, nebo dívku, abych určila správnou kategorii.`;}
+   let reg=/(prihlas|registr)/.test(s)?' Online registrace pro ročník 2027 zatím není spuštěná.':'';
+   return intro+`Ve věku ${a} let spadá do kategorie ${category(a,g)}.${childRule(a)}`+reg;
+ }
  // family/person context
  if(/(se synem|muj syn|synovi)/.test(s)){
    if(a!==null){let p=rememberPerson("syn",a,'m');return `Jasně 🙂 Syn ve věku ${a} let spadá do kategorie ${category(a,'m')}.${childRule(a)}`}
@@ -77,6 +86,7 @@ function respond(raw){
  if(/(kdy.*start|v kolik|cas.*start)/.test(s)) return `Hlavní závod startuje v ${F.start}. Prezentace je ${F.presentation}.`;
  if(/(kde.*start|odkud.*start)/.test(s)) return `Start je ${F.startPlace}. Cíl je u rozhledny Jedlová.`;
  if(/(tras|kilometr|dlouh|prevys)/.test(s)) return `Hlavní trasa má ${F.distance} a převýšení přibližně ${F.climb}. Vede z Varnsdorfu přes Dolní Podluží, Jiřetín pod Jedlovou a Křížovou horu na Jedlovou.`;
+ if(/(mer.*cas|cas.*mer|cip|casomir|dostanu.*cip|vlastni.*cip)/.test(s)) return "Čas je měřen čipem, který závodník dostane na startu.";
  if(/(helma|prilba|bez helmy|bez prilby)/.test(s)) return "Ano, cyklistická helma je povinná po celou dobu závodu.";
  if(/(uzavren|auta|provoz|silnice)/.test(s)) return "Trať není uzavřená. Závod se jede za plného silničního provozu a účastníci musí dodržovat pravidla silničního provozu.";
  if(/(dest|prset|pocasi)/.test(s)) return "Závod se koná za každého počasí.";
@@ -88,7 +98,7 @@ function respond(raw){
  if(/(deti|dite)/.test(s)) return "Děti jet mohou. U mladších 18 let platí souhlas zákonného zástupce a děti mladší 15 let mohou závod absolvovat pouze v doprovodu zákonného zástupce.";
 
  // clarification instead of dead-end
- return "Tomu ještě úplně nerozumím 🙂 Myslíš tím startovné, registraci, trasu, kategorii, pravidla závodu nebo něco jiného kolem TDJ?";
+ return "Rozumím, že se ptáš na TDJ, ale tuhle konkrétní informaci zatím v ověřených podkladech nemám. Zkus otázku trochu upřesnit a já se pokusím navázat.";
 }
 function ask(q){add(q,'user');setTimeout(()=>add(respond(q)),100)}
 launcher.onclick=()=>panel.classList.toggle('open');
