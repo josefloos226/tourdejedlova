@@ -84,6 +84,11 @@ TDJ V4.3.9 — DOLADĚNÍ TABLA A HISTORIE
 - upravené řádkování hlavního nadpisu pro správné zobrazení diakritiky
 - zmenšená mezera mezi horní lištou a úvodem tabla
 - historická fotografie posunutá níž, aby obličeje lépe navazovaly na předěl sekcí
+
+TDJ V5.0 — VĚTŠÍ TABLO A FINÁLNÍ POLOHA HISTORICKÉ FOTOGRAFIE
+- desktopová mřížka tabla má 5 větších fotografií v řadě
+- tabletová mřížka má 3 a mobilní 2 fotografie v řadě
+- historická fotografie posunutá o dalších 45 px níž
 - Podstránka VŠICHNI VÍTĚZOVÉ používá bílé pozadí stejně jako ostatní podstránky TDJ.
 - Nadpis je tmavě modrý; zlatá zůstává na letopočtech, linkách, rámečcích a navigaci.
 - Černozlatá fotografie ročníku 1999 zůstává beze změny.
