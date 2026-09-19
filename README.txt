@@ -57,3 +57,7 @@ TDJ V4.3.3 — POLOHA HISTORICKÉHO VODOZNAKU
 - Historický vodoznak je posunutý přibližně o 50 px níže, aby obličeje navazovaly na dělicí linku mezi úvodem a příběhem roku 1999.
 - Letopočty v části Rok po roce používají jemnou světle modrou barvu historie.
 - Na mobilu je fotografie posunutá níže při zachování slabší intenzity.
+
+TDJ V4.3.4 — KOMPLETNÍ BALÍČEK PRO GITHUB PAGES
+- Do kořenové složky byl doplněn soubor CNAME bez přípony s doménou tourdejedlova.cz.
+- Balíček lze nahrát jako kompletní obsah repozitáře bez ztráty propojení vlastní domény.
