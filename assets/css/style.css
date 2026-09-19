@@ -1178,7 +1178,7 @@ html { scroll-behavior: smooth; }
 .tdj-history-milestones{border-top:1px solid #cbddea}
 .tdj-history-milestones article{display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;padding:38px 0;border-bottom:1px solid #cbddea}
 .tdj-history-milestones article:last-child{border-bottom:0}
-.tdj-history-milestones time{font-size:clamp(46px,5vw,72px);line-height:.86;font-weight:950;letter-spacing:-.055em;color:var(--tdj-accent,#f2c247)}
+.tdj-history-milestones time{font-size:clamp(46px,5vw,72px);line-height:.86;font-weight:950;letter-spacing:-.055em;color:#0879df}
 .tdj-history-milestones h3{margin:0 0 10px;font-size:18px;line-height:1.2;font-weight:950;letter-spacing:.08em;color:#10233d}
 .tdj-history-milestones p{max-width:720px;margin:0;font-size:17px;line-height:1.65;color:#526b82}
 .tdj-history-lead p+p{margin-top:18px}

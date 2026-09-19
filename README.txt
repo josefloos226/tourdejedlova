@@ -49,3 +49,6 @@ TDJ V4.3.1 — OPRAVA HISTORICKÉHO VODOZNAKU
 - Fotografie už není samostatným prvkem stránky a nezvětšuje výšku obsahu.
 - Je vykreslená jako průhledné pozadí přímo pod úvodem a příběhem roku 1999.
 - Aktualizované označení stylů zajišťuje načtení opravy i při dříve uložené verzi v prohlížeči.
+
+TDJ V4.3.2 — BARVA HISTORICKÝCH MILNÍKŮ
+- Žlutá čísla roků v části Rok po roce byla nahrazena značkovou modrou TDJ.
