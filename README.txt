@@ -44,3 +44,8 @@ V4.1: ISABEL posílá Workeru krátkodobou historii dialogu (max. 10 zpráv / cc
 TDJ V4.3 — HISTORICKÝ VODOZNAK
 - Jemné šedé kontury historické fotografie jsou vložené pod úvod historie a blok roku 1999.
 - Průhledná vrstva nezasahuje do textu a na mobilu se automaticky zeslabuje.
+
+TDJ V4.3.1 — OPRAVA HISTORICKÉHO VODOZNAKU
+- Fotografie už není samostatným prvkem stránky a nezvětšuje výšku obsahu.
+- Je vykreslená jako průhledné pozadí přímo pod úvodem a příběhem roku 1999.
+- Aktualizované označení stylů zajišťuje načtení opravy i při dříve uložené verzi v prohlížeči.
