@@ -73,6 +73,17 @@ TDJ V4.3.6 — OPRAVA ZLATÉHO TLAČÍTKA
 - Opraveno přepsání barvy obecným stylem ostatních tlačítek fotogalerie.
 
 TDJ V4.3.7 — BÍLÁ STRÁNKA TABLA
+
+TDJ V4.3.8 — TABLO ROZTAŽENÉ NA 6 FOTOGRAFIÍ
+- desktopová mřížka tabla má 6 fotografií v řadě
+- obsah je roztažený až na 1720 px / 94 % šířky okna
+- na tabletu se mřížka skládá do 4 a na mobilu do 2 sloupců
+
+TDJ V4.3.9 — DOLADĚNÍ TABLA A HISTORIE
+- tablo rozšířeno o připravené ročníky 2029 a 2030
+- upravené řádkování hlavního nadpisu pro správné zobrazení diakritiky
+- zmenšená mezera mezi horní lištou a úvodem tabla
+- historická fotografie posunutá níž, aby obličeje lépe navazovaly na předěl sekcí
 - Podstránka VŠICHNI VÍTĚZOVÉ používá bílé pozadí stejně jako ostatní podstránky TDJ.
 - Nadpis je tmavě modrý; zlatá zůstává na letopočtech, linkách, rámečcích a navigaci.
 - Černozlatá fotografie ročníku 1999 zůstává beze změny.
