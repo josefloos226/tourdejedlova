@@ -1,3 +1,12 @@
+TDJ V4.2 — HISTORIE
+====================
+- Dokončena samostatná stránka Příběh TDJ.
+- Doplněn vznik závodu v roce 1999 a původní cesty přes sjezdovku, Tolštejn a Křížovou horu.
+- Doplněn zakladatel a dlouholetý organizátor Miloš Javůrek.
+- Doplněno převzetí organizace Terkou a Tomášem v roce 2024.
+- Milníky: rekord Jana Strože 23:04 (2021), 118 účastníků (2025) a 28. ročník (2026).
+- Upravená upoutávka Historie na hlavní stránce a znalost historie v ISABEL.
+
 TDJ Production V1.12
 
 Změna proti V1.11:

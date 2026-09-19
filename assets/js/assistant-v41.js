@@ -71,7 +71,7 @@ const intents=[
  {id:"awards",score:7,keys:["vyhlas","stupne vitezu","prvni tri"],answer:()=>"Vyhlašují se všechny kategorie a v každé 1.–3. místo. Vyhlášení probíhá po dojezdu posledního závodníka a vyhodnocení závodu."},
  {id:"spectators",score:7,keys:["divak","fand","fandit","rodina cekat"],answer:()=>"Diváci jsou vítáni kdekoliv podél trasy i v cíli. Nejlepší místo na fandění je ve druhé třetině závodu směrem na Jedlovou v náročném stoupání."},
  {id:"photos",score:6,keys:["foto","fotky","fotografie","galerie"],answer:()=>"Fotografie z jednotlivých ročníků najdeš na webu TDJ v sekci Fotogalerie a ve fotoarchivu."},
- {id:"history",score:6,keys:["historie","vznik zavodu"],answer:()=>"Příběh a historii Tour de Jedlová najdeš v sekci Historie na webu TDJ."},
+ {id:"history",score:6,keys:["historie","vznik zavodu","kdo zalozil zavod","zakladatel","milos javurek","prvni rocnik"],answer:()=>"Tour de Jedlová vznikla v roce 1999 z výpravy malé party na Jedlovou. Zakladatelem a dlouholetým organizátorem byl Miloš Javůrek; v roce 2024 převzali organizaci Terka s Tomášem. Celý příběh najdeš v sekci Historie."},
  {id:"help",score:6,keys:["pomah","charit","sbirka"],answer:()=>"TDJ není jen cyklistický závod. Součástí akce je také pomoc konkrétním lidem a rodinám prostřednictvím komunity kolem Tour de Jedlová."},
  {id:"cc",score:6,keys:["cc varnsdorf","pohar"],answer:()=>"Tour de Jedlová je zařazena do poháru CC Varnsdorf."}
 ];
