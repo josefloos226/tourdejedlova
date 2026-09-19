@@ -41,3 +41,6 @@ V4.1
 - Gemini API klic neni ulozen ve webu; zustava jako Cloudflare Secret.
 
 V4.1: ISABEL posílá Workeru krátkodobou historii dialogu (max. 10 zpráv / cca 5 výměn).
+TDJ V4.3 — HISTORICKÝ VODOZNAK
+- Jemné šedé kontury historické fotografie jsou vložené pod úvod historie a blok roku 1999.
+- Průhledná vrstva nezasahuje do textu a na mobilu se automaticky zeslabuje.
