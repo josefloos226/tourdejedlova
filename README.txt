@@ -61,3 +61,9 @@ TDJ V4.3.3 — POLOHA HISTORICKÉHO VODOZNAKU
 TDJ V4.3.4 — KOMPLETNÍ BALÍČEK PRO GITHUB PAGES
 - Do kořenové složky byl doplněn soubor CNAME bez přípony s doménou tourdejedlova.cz.
 - Balíček lze nahrát jako kompletní obsah repozitáře bez ztráty propojení vlastní domény.
+
+TDJ V4.3.5 — TABLO TDJ
+- Ve fotogalerii bylo přidáno první zlaté tlačítko TABLO TDJ.
+- Přidána podstránka VŠICHNI VÍTĚZOVÉ se 30 poli pro ročníky 1999–2028.
+- Dostupné fotografie ročníků 1999, 2004–2007 a 2019–2026 jsou vložené; ostatní roky mají připravené zlaté pozice.
+- Tablo má čtyři sloupce na desktopu, dva na mobilu a fotografie lze otevřít ve zvětšeném náhledu.

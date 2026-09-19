@@ -226,3 +226,24 @@ document.addEventListener('DOMContentLoaded', function () {
  window.addEventListener('resize',()=>{if(innerWidth>800)close();});
 })();
 
+(function(){
+  const lightbox=document.getElementById('tdjTabloLightbox');
+  if(!lightbox) return;
+  const image=lightbox.querySelector('img');
+  const year=lightbox.querySelector('strong');
+  const close=lightbox.querySelector('.tdj-tablo-lightbox-close');
+  function openCard(card){
+    image.src=card.dataset.tabloImage;
+    image.alt='Tour de Jedlová '+card.dataset.tabloYear;
+    year.textContent=card.dataset.tabloYear;
+    lightbox.showModal();
+  }
+  document.querySelectorAll('.tdj-tablo-card.is-filled').forEach(function(card){
+    card.addEventListener('click',function(){openCard(card)});
+    card.addEventListener('keydown',function(event){
+      if(event.key==='Enter'||event.key===' '){event.preventDefault();openCard(card)}
+    });
+  });
+  close.addEventListener('click',function(){lightbox.close()});
+  lightbox.addEventListener('click',function(event){if(event.target===lightbox)lightbox.close()});
+})();

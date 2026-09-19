@@ -2098,3 +2098,39 @@ html { scroll-behavior: smooth; }
 .tdj-cookie-copy{flex:1;min-width:0}.tdj-cookie-copy strong{display:block;margin-bottom:5px;font-size:15px}.tdj-cookie-copy p{margin:0;font-size:13px;line-height:1.45;color:#60758e}
 .tdj-cookie-actions{display:flex;gap:9px;flex-wrap:wrap}.tdj-cookie-btn{appearance:none;border:1px solid #0b2341;border-radius:999px;padding:10px 15px;font:700 12px/1 inherit;letter-spacing:.02em;cursor:pointer;background:#fff;color:#0b2341}.tdj-cookie-btn.primary{background:#0b2341;color:#fff}
 @media(max-width:720px){.tdj-cookie-banner{left:10px;right:10px;bottom:10px;padding:16px}.tdj-cookie-banner.is-visible{display:block}.tdj-cookie-actions{margin-top:14px}.tdj-cookie-btn{flex:1}}
+
+/* V4.3.5 — Tablo TDJ */
+#galleryLinkTablo,#galleryLinkOther{min-width:132px;text-align:center;box-sizing:border-box}
+#galleryLinkTablo{background:linear-gradient(135deg,#f0d482,#c99a34);border-color:#c99a34;color:#071b31;box-shadow:0 8px 22px rgba(166,119,25,.2)}
+#galleryLinkTablo:hover{background:linear-gradient(135deg,#f7e5a8,#d6aa4c);border-color:#d6aa4c;color:#071b31;transform:translateY(-1px)}
+.tdj-tablo-page{background:#070707;color:#fff}
+.tdj-tablo-page .tdj-gallery-top{background:#070707;color:#e5c46d;border-bottom-color:rgba(218,181,77,.32)}
+.tdj-tablo-page .tdj-gallery-top a:hover{color:#f0d482}
+.tdj-tablo-main{width:min(1320px,90vw)}
+.tdj-tablo-hero{border-bottom-color:rgba(218,181,77,.35)}
+.tdj-tablo-hero .tdj-gallery-mark{color:#17130b;text-shadow:0 0 1px rgba(229,196,109,.35)}
+.tdj-tablo-hero .tdj-gallery-kicker{color:#d9b34e}
+.tdj-tablo-hero h1{color:#fff}
+.tdj-tablo-hero p{color:#bcb6a7}
+.tdj-tablo-content{margin-top:68px}
+.tdj-tablo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:38px 22px}
+.tdj-tablo-card{margin:0;min-width:0}
+.tdj-tablo-photo{position:relative;overflow:hidden;aspect-ratio:4/3;background:#0e0e0e;border:1px solid rgba(218,181,77,.52);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+.tdj-tablo-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:saturate(.94) contrast(1.02);transition:transform .55s ease,filter .35s ease}
+.tdj-tablo-card figcaption{padding-top:13px;color:#d8b655;font-size:22px;line-height:1;font-weight:950;letter-spacing:.055em}
+.tdj-tablo-card.is-filled{cursor:zoom-in}
+.tdj-tablo-card.is-filled:hover .tdj-tablo-photo img,.tdj-tablo-card.is-filled:focus .tdj-tablo-photo img{transform:scale(1.015);filter:saturate(1) contrast(1.04)}
+.tdj-tablo-card.is-filled:focus{outline:0}
+.tdj-tablo-card.is-filled:focus .tdj-tablo-photo{outline:2px solid #e6c66f;outline-offset:3px}
+.tdj-tablo-placeholder{background:linear-gradient(145deg,#0b0b0b,#11100d)}
+.tdj-tablo-placeholder:before{content:"";position:absolute;inset:15px;border:1px solid rgba(218,181,77,.12)}
+.tdj-tablo-placeholder:after{content:"TDJ.";position:absolute;inset:0;display:grid;place-items:center;color:rgba(218,181,77,.1);font-size:clamp(42px,6vw,76px);font-weight:950;letter-spacing:-.07em}
+.tdj-tablo-page .tdj-gallery-bottom{border-top-color:rgba(218,181,77,.3);color:#e5c46d}
+.tdj-tablo-page .tdj-gallery-bottom a:hover{color:#f4df9b}
+.tdj-tablo-lightbox{padding:0;border:0;background:transparent;overflow:visible;max-width:none;max-height:none}
+.tdj-tablo-lightbox::backdrop{background:rgba(0,0,0,.94);backdrop-filter:blur(4px)}
+.tdj-tablo-lightbox img{display:block;max-width:92vw;max-height:84vh;object-fit:contain;border:1px solid rgba(226,193,99,.55);box-shadow:0 25px 80px rgba(0,0,0,.75)}
+.tdj-tablo-lightbox strong{display:block;margin-top:14px;text-align:center;color:#e2c163;font-size:22px;letter-spacing:.08em}
+.tdj-tablo-lightbox-close{position:absolute;right:-15px;top:-15px;width:42px;height:42px;border:1px solid rgba(226,193,99,.75);border-radius:50%;background:#080808;color:#efd782;font-size:27px;line-height:1;cursor:pointer}
+@media(max-width:900px){.tdj-tablo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px}.tdj-tablo-main{width:88vw}.tdj-tablo-content{margin-top:48px}}
+@media(max-width:520px){#galerie .year-links{width:100%}#galerie .year-links a{flex:1 0 calc(50% - 10px);text-align:center}.tdj-tablo-card figcaption{font-size:18px}.tdj-tablo-lightbox-close{right:0;top:-52px}}
