@@ -89,6 +89,10 @@ TDJ V5.0 — VĚTŠÍ TABLO A FINÁLNÍ POLOHA HISTORICKÉ FOTOGRAFIE
 - desktopová mřížka tabla má 5 větších fotografií v řadě
 - tabletová mřížka má 3 a mobilní 2 fotografie v řadě
 - historická fotografie posunutá o dalších 45 px níž
+
+TDJ V5.1 — VŠICHNI JSME VÍTĚZOVÉ
+- hlavní nadpis tabla změněn na „VŠICHNI JSME VÍTĚZOVÉ.“
+- úvodní text doplněn o větu „Nejde jen o pořadí v cíli.“
 - Podstránka VŠICHNI VÍTĚZOVÉ používá bílé pozadí stejně jako ostatní podstránky TDJ.
 - Nadpis je tmavě modrý; zlatá zůstává na letopočtech, linkách, rámečcích a navigaci.
 - Černozlatá fotografie ročníku 1999 zůstává beze změny.
