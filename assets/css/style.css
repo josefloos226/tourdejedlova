@@ -2101,32 +2101,35 @@ html { scroll-behavior: smooth; }
 
 /* V4.3.5 — Tablo TDJ */
 #galleryLinkTablo,#galleryLinkOther{min-width:132px;text-align:center;box-sizing:border-box}
-#galleryLinkTablo{background:linear-gradient(135deg,#f0d482,#c99a34);border-color:#c99a34;color:#071b31;box-shadow:0 8px 22px rgba(166,119,25,.2)}
-#galleryLinkTablo:hover{background:linear-gradient(135deg,#f7e5a8,#d6aa4c);border-color:#d6aa4c;color:#071b31;transform:translateY(-1px)}
-.tdj-tablo-page{background:#070707;color:#fff}
-.tdj-tablo-page .tdj-gallery-top{background:#070707;color:#e5c46d;border-bottom-color:rgba(218,181,77,.32)}
-.tdj-tablo-page .tdj-gallery-top a:hover{color:#f0d482}
+#galerie .year-links #galleryLinkTablo,
+#galerie .year-links #galleryLinkTablo:link,
+#galerie .year-links #galleryLinkTablo:visited{background:linear-gradient(135deg,#f2d66f 0%,#d5aa3f 52%,#b98520 100%)!important;border-color:#b98520!important;color:#071b31!important;box-shadow:0 10px 26px rgba(154,107,18,.32)!important}
+#galerie .year-links #galleryLinkTablo:hover,
+#galerie .year-links #galleryLinkTablo:focus-visible{background:linear-gradient(135deg,#f8e498 0%,#dfba57 55%,#c49328 100%)!important;border-color:#c49328!important;color:#071b31!important;transform:translateY(-1px)!important}
+.tdj-tablo-page{background:#fff;color:#10233d}
+.tdj-tablo-page .tdj-gallery-top{background:#fff;color:#a97917;border-bottom-color:#e5d5a8}
+.tdj-tablo-page .tdj-gallery-top a:hover{color:#c39327}
 .tdj-tablo-main{width:min(1320px,90vw)}
-.tdj-tablo-hero{border-bottom-color:rgba(218,181,77,.35)}
-.tdj-tablo-hero .tdj-gallery-mark{color:#17130b;text-shadow:0 0 1px rgba(229,196,109,.35)}
-.tdj-tablo-hero .tdj-gallery-kicker{color:#d9b34e}
-.tdj-tablo-hero h1{color:#fff}
-.tdj-tablo-hero p{color:#bcb6a7}
+.tdj-tablo-hero{border-bottom-color:#e5d5a8}
+.tdj-tablo-hero .tdj-gallery-mark{color:#f2ead5;text-shadow:none}
+.tdj-tablo-hero .tdj-gallery-kicker{color:#b5841d}
+.tdj-tablo-hero h1{color:#10233d}
+.tdj-tablo-hero p{color:#5e7085}
 .tdj-tablo-content{margin-top:68px}
 .tdj-tablo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:38px 22px}
 .tdj-tablo-card{margin:0;min-width:0}
-.tdj-tablo-photo{position:relative;overflow:hidden;aspect-ratio:4/3;background:#0e0e0e;border:1px solid rgba(218,181,77,.52);box-shadow:0 18px 42px rgba(0,0,0,.28)}
+.tdj-tablo-photo{position:relative;overflow:hidden;aspect-ratio:4/3;background:#f8f6ef;border:1px solid #d8b655;box-shadow:0 15px 35px rgba(16,35,61,.09)}
 .tdj-tablo-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:saturate(.94) contrast(1.02);transition:transform .55s ease,filter .35s ease}
 .tdj-tablo-card figcaption{padding-top:13px;color:#d8b655;font-size:22px;line-height:1;font-weight:950;letter-spacing:.055em}
 .tdj-tablo-card.is-filled{cursor:zoom-in}
 .tdj-tablo-card.is-filled:hover .tdj-tablo-photo img,.tdj-tablo-card.is-filled:focus .tdj-tablo-photo img{transform:scale(1.015);filter:saturate(1) contrast(1.04)}
 .tdj-tablo-card.is-filled:focus{outline:0}
 .tdj-tablo-card.is-filled:focus .tdj-tablo-photo{outline:2px solid #e6c66f;outline-offset:3px}
-.tdj-tablo-placeholder{background:linear-gradient(145deg,#0b0b0b,#11100d)}
-.tdj-tablo-placeholder:before{content:"";position:absolute;inset:15px;border:1px solid rgba(218,181,77,.12)}
-.tdj-tablo-placeholder:after{content:"TDJ.";position:absolute;inset:0;display:grid;place-items:center;color:rgba(218,181,77,.1);font-size:clamp(42px,6vw,76px);font-weight:950;letter-spacing:-.07em}
-.tdj-tablo-page .tdj-gallery-bottom{border-top-color:rgba(218,181,77,.3);color:#e5c46d}
-.tdj-tablo-page .tdj-gallery-bottom a:hover{color:#f4df9b}
+.tdj-tablo-placeholder{background:linear-gradient(145deg,#fff,#faf6e9)}
+.tdj-tablo-placeholder:before{content:"";position:absolute;inset:15px;border:1px solid rgba(181,132,29,.18)}
+.tdj-tablo-placeholder:after{content:"TDJ.";position:absolute;inset:0;display:grid;place-items:center;color:rgba(181,132,29,.12);font-size:clamp(42px,6vw,76px);font-weight:950;letter-spacing:-.07em}
+.tdj-tablo-page .tdj-gallery-bottom{border-top-color:#e5d5a8;color:#10233d}
+.tdj-tablo-page .tdj-gallery-bottom a:hover{color:#b5841d}
 .tdj-tablo-lightbox{padding:0;border:0;background:transparent;overflow:visible;max-width:none;max-height:none}
 .tdj-tablo-lightbox::backdrop{background:rgba(0,0,0,.94);backdrop-filter:blur(4px)}
 .tdj-tablo-lightbox img{display:block;max-width:92vw;max-height:84vh;object-fit:contain;border:1px solid rgba(226,193,99,.55);box-shadow:0 25px 80px rgba(0,0,0,.75)}

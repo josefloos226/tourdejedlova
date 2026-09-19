@@ -67,3 +67,12 @@ TDJ V4.3.5 — TABLO TDJ
 - Přidána podstránka VŠICHNI VÍTĚZOVÉ se 30 poli pro ročníky 1999–2028.
 - Dostupné fotografie ročníků 1999, 2004–2007 a 2019–2026 jsou vložené; ostatní roky mají připravené zlaté pozice.
 - Tablo má čtyři sloupce na desktopu, dva na mobilu a fotografie lze otevřít ve zvětšeném náhledu.
+
+TDJ V4.3.6 — OPRAVA ZLATÉHO TLAČÍTKA
+- Tlačítko TABLO TDJ má výraznou zlatou výplň, tmavý text a zlatý hover.
+- Opraveno přepsání barvy obecným stylem ostatních tlačítek fotogalerie.
+
+TDJ V4.3.7 — BÍLÁ STRÁNKA TABLA
+- Podstránka VŠICHNI VÍTĚZOVÉ používá bílé pozadí stejně jako ostatní podstránky TDJ.
+- Nadpis je tmavě modrý; zlatá zůstává na letopočtech, linkách, rámečcích a navigaci.
+- Černozlatá fotografie ročníku 1999 zůstává beze změny.
