@@ -96,3 +96,8 @@ TDJ V5.1 — VŠICHNI JSME VÍTĚZOVÉ
 - Podstránka VŠICHNI VÍTĚZOVÉ používá bílé pozadí stejně jako ostatní podstránky TDJ.
 - Nadpis je tmavě modrý; zlatá zůstává na letopočtech, linkách, rámečcích a navigaci.
 - Černozlatá fotografie ročníku 1999 zůstává beze změny.
+
+TDJ V5.2 — TYPOGRAFIE NADPISU HISTORIE
+- nadpis „TRADICE PŘEDÁVANÁ DALŠÍ GENERACI.“ je lehce roztažený do šířky
+- zvětšené řádkování dává háčkům a čárkám dostatek prostoru
+- text a ostatní prvky stránky zůstávají beze změny

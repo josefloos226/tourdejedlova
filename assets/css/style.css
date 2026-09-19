@@ -1169,6 +1169,7 @@ html { scroll-behavior: smooth; }
 .tdj-history-facts strong{display:block;font-size:30px;line-height:1;font-weight:950;letter-spacing:-.03em}
 .tdj-history-facts span{display:block;margin-top:9px;font-size:10px;font-weight:900;letter-spacing:.16em;color:#70869a}
 .tdj-history-copy{padding:84px 0;border-bottom:1px solid #cbddea}
+.tdj-history-copy h2{letter-spacing:-.035em;line-height:.98}
 .tdj-history-columns{display:grid;grid-template-columns:1fr 1fr;gap:54px}
 .tdj-history-columns p{margin:0}
 .tdj-history-closing{padding:84px 0 20px}
