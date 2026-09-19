@@ -1151,7 +1151,7 @@ html { scroll-behavior: smooth; }
 .tdj-history-top{height:78px;padding:0 5.5vw;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6e5f0;background:#fff;font-size:13px;font-weight:900;letter-spacing:.06em}
 .tdj-history-top a{color:#10233d;text-decoration:none}
 .tdj-history-main{position:relative;isolation:isolate;width:min(1120px,calc(100% - 64px));margin:0 auto;padding:64px 0 110px}
-.tdj-history-main::before{content:"";position:absolute;z-index:0;top:48px;left:50%;width:calc(100% + 160px);height:960px;transform:translateX(-50%);background:url("../images/tdj-history-1999-watermark.png") center top/contain no-repeat;opacity:.2;pointer-events:none}
+.tdj-history-main::before{content:"";position:absolute;z-index:0;top:100px;left:50%;width:calc(100% + 160px);height:960px;transform:translateX(-50%);background:url("../images/tdj-history-1999-watermark.png") center top/contain no-repeat;opacity:.2;pointer-events:none}
 .tdj-history-main>section,.tdj-history-bottom-nav{position:relative;z-index:1}
 .tdj-history-hero{display:grid;grid-template-columns:36% 64%;gap:52px;align-items:center;min-height:420px;padding:12px 0 72px;border-bottom:1px solid #cbddea}
 .tdj-history-mark{font-size:clamp(145px,14vw,215px);line-height:.78;font-weight:950;letter-spacing:-.08em;color:#e6f3fc;white-space:nowrap}
@@ -1178,7 +1178,7 @@ html { scroll-behavior: smooth; }
 .tdj-history-milestones{border-top:1px solid #cbddea}
 .tdj-history-milestones article{display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;padding:38px 0;border-bottom:1px solid #cbddea}
 .tdj-history-milestones article:last-child{border-bottom:0}
-.tdj-history-milestones time{font-size:clamp(46px,5vw,72px);line-height:.86;font-weight:950;letter-spacing:-.055em;color:#0879df}
+.tdj-history-milestones time{font-size:clamp(46px,5vw,72px);line-height:.86;font-weight:950;letter-spacing:-.055em;color:#e6f3fc}
 .tdj-history-milestones h3{margin:0 0 10px;font-size:18px;line-height:1.2;font-weight:950;letter-spacing:.08em;color:#10233d}
 .tdj-history-milestones p{max-width:720px;margin:0;font-size:17px;line-height:1.65;color:#526b82}
 .tdj-history-lead p+p{margin-top:18px}
@@ -1186,7 +1186,7 @@ html { scroll-behavior: smooth; }
 @media(max-width:800px){
  .tdj-history-top{height:68px;padding:0 22px;font-size:11px}
  .tdj-history-main{width:calc(100% - 40px);padding:38px 0 80px}
- .tdj-history-main::before{top:125px;width:185%;height:980px;opacity:.13}
+ .tdj-history-main::before{top:175px;width:185%;height:980px;opacity:.13}
  .tdj-history-hero,.tdj-history-lead{grid-template-columns:1fr;gap:24px;min-height:0;padding:0 0 48px}
  .tdj-history-mark{font-size:clamp(105px,31vw,155px)}
  .tdj-history-intro h1{font-size:clamp(50px,14vw,74px)}

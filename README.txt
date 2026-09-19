@@ -52,3 +52,8 @@ TDJ V4.3.1 — OPRAVA HISTORICKÉHO VODOZNAKU
 
 TDJ V4.3.2 — BARVA HISTORICKÝCH MILNÍKŮ
 - Žlutá čísla roků v části Rok po roce byla nahrazena značkovou modrou TDJ.
+
+TDJ V4.3.3 — POLOHA HISTORICKÉHO VODOZNAKU
+- Historický vodoznak je posunutý přibližně o 50 px níže, aby obličeje navazovaly na dělicí linku mezi úvodem a příběhem roku 1999.
+- Letopočty v části Rok po roce používají jemnou světle modrou barvu historie.
+- Na mobilu je fotografie posunutá níže při zachování slabší intenzity.
